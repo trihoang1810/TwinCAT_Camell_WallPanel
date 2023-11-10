@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsConnectionInfoEL2911" Id="{e7a035fd-0d22-457a-bd04-256cb9a6f046}">
+    <Declaration><![CDATA[TYPE ST_TsConnectionInfoEL2911 :
+(*******************************************************************************************************
+Description			:	Connection information data of EtherCAT Slaves with 2 byte input and 2 byte output safe data  
+Supported terminals : 	EP1957, EL2911
+Date 				:	04.11.2018
+********************************************************************************************************)
+STRUCT
+
+	nState  								:USINT;
+	nDiag 	 								:USINT;
+	nInOutSafeDataByte1						:BYTE;
+	nInOutSafeDataByte2						:BYTE;
+
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

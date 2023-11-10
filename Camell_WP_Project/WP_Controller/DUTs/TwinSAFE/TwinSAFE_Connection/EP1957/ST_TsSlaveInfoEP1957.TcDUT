@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsSlaveInfoEP1957" Id="{6739d6bd-bf7d-4403-b283-775889b1b8c8}">
+    <Declaration><![CDATA[TYPE ST_TsSlaveInfoEP1957 :
+STRUCT
+	
+(* act_EcSlaveIdentify *)
+	sEcSlaveType							:STRING(15);
+	sEcSlaveName							:STRING(31) := '';
+	bSlaveIdentify							:BOOL;
+	bSlaveTypeError							:BOOL;
+	{attribute 'displaymode':='hex'}
+	nEcProjectCrc							:UINT;
+	
+	stTsSlaveAddress 						:ST_TsSlaveAddressCRC;
+	bSlaveAddressOk							:BOOL;
+	
+	nEcSlaveFSoEAddr						:UINT;
+	nEcSlaveSerialNumber					:UDINT;
+	
+(* act_ConnectionState *)
+	sState									:STRING;
+	
+(* act_ConnectionDiag *)
+	sDiag									:STRING;
+	sFault									:STRING;						(* FailSafe Error (Hardware)*)
+	bError									:BOOL;							(* TwinSAFE-Error *)
+	
+(* act_ReadDiagObjects *)
+	stSlaveTemp								:ST_TsSlave2Temp;
+	bIntTempWarning1						:BOOL;							(* Temperature warning: T1 *)
+	bIntTempWarning2						:BOOL;							(* Temperature warning: T2 *)
+	stTsDiagObjectsBitsEP1957				:ARRAY[1..2] OF ST_TsDeviceInfoDataEP1957;
+
+(* act_Signals *)
+	(* Inputs *)
+	bFSINChannel1         					:BOOL;
+	bFSINChannel2        					:BOOL;
+	bFSINModule1Fault    					:BOOL;
+	bFSINModule1ErrAck  					:BOOL;
+
+	bFSINChannel3        					:BOOL;
+	bFSINChannel4        					:BOOL;
+	bFSINModule2Fault    					:BOOL;
+	bFSINModule2ErrAck   					:BOOL;
+
+	bFSINChannel5        					:BOOL;
+	bFSINChannel6        					:BOOL;
+	bFSINModule3Fault    					:BOOL;
+	bFSINModule3ErrAck   					:BOOL;
+
+	bFSINChannel7        					:BOOL;
+	bFSINChannel8        					:BOOL;
+	bFSINModule4Fault    					:BOOL;
+	bFSINModule4ErrAck   					:BOOL;
+                   
+	(* Outputs *)
+	bFSOUTChannel1     						:BOOL;
+	bFSOUTModule1Fault   					:BOOL;
+	bFSOUTModule1ErrAck	   					:BOOL;
+
+	bFSOUTChannel2     						:BOOL;
+	bFSOUTModule2Fault 	   					:BOOL;
+	bFSOUTModule2ErrAck	   					:BOOL;
+
+	bFSOUTChannel3     						:BOOL;
+	bFSOUTModule3Fault 	   					:BOOL;
+	bFSOUTModule3ErrAck	   					:BOOL;
+
+	bFSOUTChannel4     						:BOOL;
+	bFSOUTModule4Fault 	   					:BOOL;
+	bFSOUTModule4ErrAck					   	:BOOL;
+
+END_STRUCT
+END_TYPE
+(*End*)
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

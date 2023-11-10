@@ -1449,6 +1449,122 @@ External Setpoint Generation:
 			</Properties>
 		</DataType>
 		<DataType>
+			<Name GUID="{334B4E12-F327-2C06-3A3C-30F8A70811BF}" AutoDeleteType="true">ST_TsGroupInfo</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>nState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDiag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{81B9BE57-2B4A-C40F-AB4A-60698BE1945B}" AutoDeleteType="true">ST_AdsAddr</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>netId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>port</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{5454F27C-6F51-C358-F59C-9677FA982B01}" AutoDeleteType="true">ST_TsConnectionInfoEL1904</Name>
+			<BitSize>24</BitSize>
+			<SubItem>
+				<Name>nState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDiag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nInOutSafeDataByte1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{668FC2BB-244D-9AB0-6BCE-5DFE194A6340}" AutoDeleteType="true">ST_TsConnectionInfoEL2912</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>nState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDiag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nInOutSafeDataByte1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nInOutSafeDataByte2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{33D27437-F6CE-D4CB-0C7C-8BDB2ABE2779}" AutoDeleteType="true">ST_TsFbInfo</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>nState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDiag</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{E4C24E72-EF65-C814-8E17-663F53275EE3}" Namespace="Tc2_ModbusRTU" AutoDeleteType="true">MB_KL6outData22B</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
@@ -4910,6 +5026,7 @@ External Setpoint Generation:
 	</ImageDatas>
 	<Project ProjectGUID="{D9F72B40-9ECE-4862-A109-010BC4FD98F0}" TargetNetId="169.254.69.6.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
+			<Settings RouterMemory="1073741824"/>
 			<Licenses>
 				<Target>
 					<ManualSelect>{B1065A48-8131-4608-A378-D67FA8BD826E}</ManualSelect>
@@ -5118,7 +5235,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{A2750A2F-9157-46E4-826D-100FB9870AAF}" Name="WP_Controller" PrjFilePath="WP_Controller\WP_Controller.plcproj" TmcFilePath="WP_Controller\WP_Controller.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WP_Controller\WP_Controller.tmc" TmcHash="{9DD75AC6-CB8F-78AE-B71D-D8467A39A244}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WP_Controller\WP_Controller.tmc" TmcHash="{D013B5CF-6FAA-4488-4D01-BAA5503925E5}">
 					<Name>WP_Controller Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -5128,9 +5245,8 @@ External Setpoint Generation:
 							<Type GUID="{F852D9F7-9DB9-AE77-EE6D-D9BA52CDE308}" Namespace="Tc2_ModbusRTU">MB_KL6inData22B</Type>
 						</Var>
 						<Var>
-							<Name>GVL.nTemp</Name>
-							<Comment><![CDATA[Thermocouple]]></Comment>
-							<Type>INT</Type>
+							<Name>PRG_PLCModbusRTU.fbModbusMaster.InData</Name>
+							<Type GUID="{F852D9F7-9DB9-AE77-EE6D-D9BA52CDE308}" Namespace="Tc2_ModbusRTU">MB_KL6inData22B</Type>
 						</Var>
 						<Var>
 							<Name>GVL.bSwOn</Name>
@@ -5138,9 +5254,99 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>GVL.nTemp</Name>
+							<Comment><![CDATA[Thermocouple]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>GVL.bSwOff</Name>
 							<Comment><![CDATA[Self reset]]></Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.stInfoData</Name>
+							<Comment><![CDATA[ TwinSAFE Group Info Data ]]></Comment>
+							<Type GUID="{334B4E12-F327-2C06-3A3C-30F8A70811BF}">ST_TsGroupInfo</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bComErr</Name>
+							<Comment><![CDATA[ TwinSAFE group communication error - linked with the associated TwinSAFE Group in the TwinSAFE projekt ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bFbErr</Name>
+							<Comment><![CDATA[ TwinSAFE group function block error - linked with the associated TwinSAFE Group in the TwinSAFE projekt ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bOtherErr</Name>
+							<Comment><![CDATA[ ModuleFault or AnalogValueFault or WaitComTimeoutFault ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bComStartUp</Name>
+							<Comment><![CDATA[ At least one of the Connection of this group is in the StartUp ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bFbDeactive</Name>
+							<Comment><![CDATA[ TwinSAFE group was deactivated ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bFbRun</Name>
+							<Comment><![CDATA[ All Fbs are in run state ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bInRun</Name>
+							<Comment><![CDATA[ TwinSAFE group is in run ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL6910.stEcAdsAddr</Name>
+							<Comment><![CDATA[ [TwinSAFE logic] e.g. EL69xx \ Connection Info Data \ [Path] Info Data]]></Comment>
+							<Type GUID="{81B9BE57-2B4A-C40F-AB4A-60698BE1945B}">ST_AdsAddr</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL6910.nEcSlaveState</Name>
+							<Comment><![CDATA[ EL6910 \ InfoData \ State ]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL1904.stInfoData</Name>
+							<Comment><![CDATA[ [TwinSAFE logic] e.g. EL69xx \ Connection Info Data \ [Path] Info Data]]></Comment>
+							<Type GUID="{5454F27C-6F51-C358-F59C-9677FA982B01}">ST_TsConnectionInfoEL1904</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL1904.nEcSlaveState</Name>
+							<Comment><![CDATA[ EL1904 \ InfoData \ State ]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL1904.stEcAdsAddr</Name>
+							<Comment><![CDATA[ EL1904 \ InfoData \ AdsAddr ]]></Comment>
+							<Type GUID="{81B9BE57-2B4A-C40F-AB4A-60698BE1945B}">ST_AdsAddr</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL2912.stInfoData</Name>
+							<Comment><![CDATA[ [TwinSAFE logic] e.g. EL69xx \ Connection Info Data \ [Path] Info Data]]></Comment>
+							<Type GUID="{668FC2BB-244D-9AB0-6BCE-5DFE194A6340}">ST_TsConnectionInfoEL2912</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL2912.nEcSlaveState</Name>
+							<Comment><![CDATA[ EL2911 \ InfoData \ State ]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL2912.stEcAdsAddr</Name>
+							<Comment><![CDATA[ EL2911 \ InfoData \ AdsAddr ]]></Comment>
+							<Type GUID="{81B9BE57-2B4A-C40F-AB4A-60698BE1945B}">ST_AdsAddr</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsFB_Estop1.stInfoData</Name>
+							<Comment><![CDATA[ Function Block Info Data ]]></Comment>
+							<Type GUID="{33D27437-F6CE-D4CB-0C7C-8BDB2ABE2779}">ST_TsFbInfo</Type>
 						</Var>
 						<Var>
 							<Name>GVL.bButtonFw</Name>
@@ -5149,6 +5355,11 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL.bButtonBw</Name>
+							<Comment><![CDATA[Self reset]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.bButtonHalt</Name>
 							<Comment><![CDATA[Self reset]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -5163,9 +5374,8 @@ External Setpoint Generation:
 							<Type>REAL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.bButtonHalt</Name>
-							<Comment><![CDATA[Self reset]]></Comment>
-							<Type>BOOL</Type>
+							<Name>GVL.stAxis1.NcToPlc</Name>
+							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 						<Var>
 							<Name>GVL.bButtonAuto</Name>
@@ -5173,27 +5383,17 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.stAxis1.NcToPlc</Name>
-							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
 							<Name>GVL.uLoadCellRawValue</Name>
 							<Comment><![CDATA[ Loadcell scaling variables]]></Comment>
 							<Type>DINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.bSafeRedLedInput</Name>
-							<Comment><![CDATA[ safety red led reception signal for ouput signal imported from EL6910]]></Comment>
+							<Name>IO.bRun</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.bSafeRestartSignalInput</Name>
-							<Comment><![CDATA[restart signal]]></Comment>
+							<Name>IO.bRestart</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_PLCModbusRTU.fbModbusMaster.InData</Name>
-							<Type GUID="{F852D9F7-9DB9-AE77-EE6D-D9BA52CDE308}" Namespace="Tc2_ModbusRTU">MB_KL6inData22B</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -5203,7 +5403,33 @@ External Setpoint Generation:
 							<Type GUID="{E4C24E72-EF65-C814-8E17-663F53275EE3}" Namespace="Tc2_ModbusRTU">MB_KL6outData22B</Type>
 						</Var>
 						<Var>
+							<Name>PRG_PLCModbusRTU.fbModbusMaster.OutData</Name>
+							<Type GUID="{E4C24E72-EF65-C814-8E17-663F53275EE3}" Namespace="Tc2_ModbusRTU">MB_KL6outData22B</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.ErrAck</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.RstEstop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.RunStop</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>GVL.bLight</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bRun</Name>
+							<Comment><![CDATA[ TwinSAFE group run - linked with the associated TwinSAFE Group in the TwinSAFE projekt ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsGroup_1.bErrAck</Name>
+							<Comment><![CDATA[ TwinSAFE group error acknowledge - linked with the associated TwinSAFE Group in the TwinSAFE projekt ]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -5239,23 +5465,31 @@ External Setpoint Generation:
 							<Name>GVL.bValve6</Name>
 							<Type>BOOL</Type>
 						</Var>
-						<Var>
-							<Name>GVL.bSafeRedLedOutput</Name>
-							<Comment><![CDATA[ safety output signal for EL2809 ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.bSafeRestartSignal</Name>
-							<Comment><![CDATA[restart signal for safeESTop FB]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_PLCModbusRTU.fbModbusMaster.OutData</Name>
-							<Type GUID="{E4C24E72-EF65-C814-8E17-663F53275EE3}" Namespace="Tc2_ModbusRTU">MB_KL6outData22B</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="1" ContextId="1" AreaNo="16">
 						<Name>VisionTask Inputs</Name>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.ComErr</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.FbErr</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.OutErr</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.wProjectCrc</Name>
+							<Comment><![CDATA[=== TwinSAFE Diagnostic ===//
+ target system]]></Comment>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.idiSerialnumber</Name>
+							<Type>UDINT</Type>
+						</Var>
 						<Var>
 							<Name>GVL.fUL1</Name>
 							<Comment><![CDATA[RMS Voltage]]></Comment>
@@ -5271,14 +5505,6 @@ External Setpoint Generation:
 							<Comment><![CDATA[Frequency]]></Comment>
 							<Type>REAL</Type>
 						</Var>
-						<Var>
-							<Name>GVL.bSafeFBErr</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.bSafeCommErr</Name>
-							<Type>BOOL</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="2" ContextId="1" AreaNo="17">
 						<Name>VisionTask Outputs</Name>
@@ -5292,21 +5518,12 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL.bLedEnableEL2xxx</Name>
-							<Comment><![CDATA[ Constant value for EL2809 controlling strobe]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL.bOutputCurrent</Name>
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>GVL.bSafeRun</Name>
-							<Comment><![CDATA[ TwinSAFE declaration]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.bSafeAck</Name>
+							<Name>GVL.bLedEnableEL2xxx</Name>
+							<Comment><![CDATA[ Constant value for EL2809 controlling strobe]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -5420,7 +5637,7 @@ External Setpoint Generation:
 			</JobPool>
 			<App VisionAppGUID="{7805E847-C3C3-4273-A6B7-891FA26EC04B}">
 				<Name>Application1</Name>
-				<Camera Id="1" Disabled="true" VisionObjectGUID="{3C4C2173-DCE2-4A23-BA9F-7F2368AED643}">
+				<Camera Id="1" VisionObjectGUID="{3C4C2173-DCE2-4A23-BA9F-7F2368AED643}">
 					<Name>Camera1</Name>
 					<Xml>
 						<TcSmExtensions>
@@ -25508,7 +25725,7 @@ External Setpoint Generation:
 					</Module>
 					<MacAddress>00:06:be:10:55:de</MacAddress>
 				</Camera>
-				<FileSource Id="1" VisionObjectGUID="{3634DFF6-FAC9-4214-A10C-79ACBEF87371}">
+				<FileSource Id="1" Disabled="true" VisionObjectGUID="{3634DFF6-FAC9-4214-A10C-79ACBEF87371}">
 					<Name>FileSource1</Name>
 					<Xml>
 						<TcSmExtensions>

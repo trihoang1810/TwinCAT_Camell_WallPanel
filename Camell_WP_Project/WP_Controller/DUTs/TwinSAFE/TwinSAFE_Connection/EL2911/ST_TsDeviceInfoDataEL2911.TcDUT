@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsDeviceInfoDataEL2911" Id="{f0343c02-6c49-40e4-a6d1-c3f4f0f239f6}">
+    <Declaration><![CDATA[TYPE ST_TsDeviceInfoDataEL2911 :
+(*******************************************************************************************************
+Description			:	EtherCAT master terminals device info controller
+Supported terminals : 	EL2911
+Date 				:	25.05.2018
+********************************************************************************************************)
+STRUCT
+	nVoltageC						:UINT;	(* Voltage controller [mV] *)
+	nTemperatureC					:INT;	(* Temperature controller [°C] *)
+	nFirmwareCrcC					:UINT;	(* CRC Firmware *)
+	nVendorDataCrcC					:UINT;	(* CRC Vendor Data *)	
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.12">
+  <DUT Name="ST_TsHardwareDiagC" Id="{62bbf0d7-02d4-4f86-a016-dbe4b455bf48}">
+    <Declaration><![CDATA[TYPE ST_TsHardwareDiagC :
+(*******************************************************************************************************
+Description			:	EtherCAT master terminals hardware diagnosis controller
+Supported terminals : 	EL6900
+Date 				:	25.05.2018
+********************************************************************************************************)
+STRUCT
+
+	nTemperatureC1					:INT;	(* Temperature controller 1 [°C] *)
+	nTemperatureC2					:INT;	(* Temperature controller 2 [°C] *)
+	nVoltageC1						:UINT;	(* Voltage controller 1 [mV] *)
+	nVoltageC2						:UINT;	(* Voltage controller 2 [mV] *)
+	
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

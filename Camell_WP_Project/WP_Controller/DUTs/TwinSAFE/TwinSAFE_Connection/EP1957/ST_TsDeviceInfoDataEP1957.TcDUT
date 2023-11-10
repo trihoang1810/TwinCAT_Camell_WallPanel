@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsDeviceInfoDataEP1957" Id="{14438cdc-42ce-4d01-b11e-0e8167a56b31}">
+    <Declaration><![CDATA[TYPE ST_TsDeviceInfoDataEP1957 :
+(*******************************************************************************************************
+Description			:	EtherCAT master terminals device info controller
+Supported terminals : 	EL1918, EP1957
+Date 				:	25.05.2018
+********************************************************************************************************)
+STRUCT
+	nVoltageC						:UINT;	(* Voltage controller [mV] *)
+	nTemperatureC					:INT;	(* Temperature controller [°C] *)
+	nFirmwareCrcC					:UINT;	(* CRC Firmware *)
+	nVendorDataCrcC					:UINT;	(* CRC Vendor Data *)	
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

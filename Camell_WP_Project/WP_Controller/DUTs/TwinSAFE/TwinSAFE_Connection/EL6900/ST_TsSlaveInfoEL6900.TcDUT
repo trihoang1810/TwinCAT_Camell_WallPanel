@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsSlaveInfoEL6900" Id="{f6031ec4-98f9-457b-a9dc-6f70b3c22820}">
+    <Declaration><![CDATA[TYPE ST_TsSlaveInfoEL6900 :
+STRUCT
+	
+(* act_EcSlaveIdentify *)
+	sEcSlaveType							:STRING(15);
+	sEcSlaveName							:STRING(31) := '';
+	bSlaveIdentify							:BOOL;
+	bSlaveTypeError							:BOOL;
+	{attribute 'displaymode':='hex'}
+	nEcSlaveProjectCRC						:UINT;
+	
+	stTsSlaveAddress 						:ST_TsSlaveAddressCRC;
+	bSlaveAddressOk							:BOOL;
+	
+	nEcSlaveFSoEAddr						:UINT;
+	nEcSlaveSerialNumber					:UDINT;
+	
+(* act_ReadDiagObjects *)
+	stHardwareDiagC							:ST_TsHardwareDiagC;
+	bIntTempWarning1						:BOOL;							(* Temperature warning: T1 *)
+	bIntTempWarning2						:BOOL;							(* Temperature warning: T2 *)
+
+END_STRUCT
+END_TYPE
+(*End*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

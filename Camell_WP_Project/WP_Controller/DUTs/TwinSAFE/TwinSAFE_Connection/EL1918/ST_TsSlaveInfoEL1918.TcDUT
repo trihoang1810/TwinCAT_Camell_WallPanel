@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsSlaveInfoEL1918" Id="{007986b1-8c9c-4a28-907b-b3c0ea71b354}">
+    <Declaration><![CDATA[TYPE ST_TsSlaveInfoEL1918 :
+STRUCT
+
+(* act_EcSlaveIdentify *)
+	sEcSlaveType							:STRING(15);
+	sEcSlaveName							:STRING(31) := '';
+	bSlaveIdentify							:BOOL;
+	bSlaveTypeError							:BOOL;
+	{attribute 'displaymode':='hex'}
+	nEcProjectCrc							:UINT;
+
+	stTsSlaveAddress 						:ST_TsSlaveAddressCRC;
+	bSlaveAddressOk							:BOOL;
+	
+	nEcSlaveFSoEAddr						:UINT;
+	nEcSlaveSerialNumber					:UDINT;
+	
+(* act_ConnectionState *)
+	sState									:STRING;
+	
+(* act_ConnectionDiag *)
+	sDiag									:STRING;
+	sFault									:STRING;						(* FailSafe Error (Hardware)*)
+	bError									:BOOL;							(* TwinSAFE-Error *)
+	
+(* act_ReadDiagObjects *)
+	stSlaveTemp								:ST_TsSlave2Temp;
+	bIntTempWarning1						:BOOL;							(* Temperature warning: T1 *)
+	bIntTempWarning2						:BOOL;							(* Temperature warning: T2 *)
+	stTsDiagObjectsBitsEL1918				:ARRAY[1..2] OF ST_TsDeviceInfoDataEL1918;	
+
+(* act_Signals *)
+	bChannel1								:BOOL;							
+	bChannel1ModuleFault					:BOOL;							
+	bChannel1ErrAck							:BOOL;
+	
+	bChannel2								:BOOL;
+	bChannel2ModuleFault					:BOOL;							
+	bChannel2ErrAck							:BOOL;
+
+	bChannel3								:BOOL;
+	bChannel3ModuleFault					:BOOL;							
+	bChannel3ErrAck							:BOOL;
+
+	bChannel4								:BOOL;
+	bChannel4ModuleFault					:BOOL;							
+	bChannel4ErrAck							:BOOL;
+
+	bChannel5								:BOOL;
+	bChannel5ModuleFault					:BOOL;							
+	bChannel5ErrAck							:BOOL;
+
+	bChannel6								:BOOL;
+	bChannel6ModuleFault					:BOOL;							
+	bChannel6ErrAck							:BOOL;
+
+	bChannel7								:BOOL;
+	bChannel7ModuleFault					:BOOL;							
+	bChannel7ErrAck							:BOOL;
+
+	bChannel8								:BOOL;
+	bChannel8ModuleFault					:BOOL;							
+	bChannel8ErrAck							:BOOL;
+
+END_STRUCT
+END_TYPE
+(*End*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

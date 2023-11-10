@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsDeviceInfoDataEL1918" Id="{30c33dea-b9d9-4ea6-8ccf-4b9a24c44be9}">
+    <Declaration><![CDATA[TYPE ST_TsDeviceInfoDataEL1918 :
+(*******************************************************************************************************
+Description			:	EtherCAT master terminals device info controller
+Supported terminals : 	EL1918
+Date 				:	25.05.2018
+********************************************************************************************************)
+STRUCT
+	nVoltageC						:UINT;	(* Voltage controller [mV] *)
+	nTemperatureC					:INT;	(* Temperature controller [°C] *)
+	nFirmwareCrcC					:UINT;	(* CRC Firmware *)
+	nVendorDataCrcC					:UINT;	(* CRC Vendor Data *)	
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

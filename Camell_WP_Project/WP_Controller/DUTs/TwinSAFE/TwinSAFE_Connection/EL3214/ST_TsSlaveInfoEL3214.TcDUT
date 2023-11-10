@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsSlaveInfoEL3214" Id="{f7bf6f16-c360-4ae7-870f-2c74eba15808}">
+    <Declaration><![CDATA[TYPE ST_TsSlaveInfoEL3214 :
+STRUCT
+	
+(* act_EcSlaveIdentify *)
+	sEcSlaveType							:STRING(15);
+	sEcSlaveName							:STRING(31) := '';
+	bSlaveIdentify							:BOOL;
+	bSlaveTypeError							:BOOL;
+	
+(* act_ConnectionState *)
+	sState									:STRING;
+	
+(* act_ConnectionDiag *)
+	sDiag									:STRING;
+	sFault									:STRING;						(* FailSafe Error (Hardware)*)
+	bError									:BOOL;							(* TwinSAFE-Error *)	
+
+(* act_Signals *)
+	nInSafeDataValue1						:UINT;
+	nInSafeDataValue2						:INT;
+	nInSafeDataValue3						:INT;
+	nInSafeDataValue4						:INT;
+
+END_STRUCT
+END_TYPE
+(*End*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsSlaveInfoEK1960" Id="{c5afabac-5893-4bc1-af0a-bc5d91dc3d55}">
+    <Declaration><![CDATA[TYPE ST_TsSlaveInfoEK1960 :
+STRUCT
+	
+(* act_EcSlaveIdentify *)
+	sEcSlaveType							:STRING(15);
+	bSlaveIdentify							:BOOL;
+	bSlaveTypeError							:BOOL;
+	
+	sEcSlaveName							:STRING(31) := '';
+
+	stTsSlaveAddress 						:ST_TsSlaveAddressCRC;
+	bSlaveAddressOk							:BOOL;
+	
+	nEcSlaveFSoEAddr						:UINT;
+	nEcSlaveSerialNumber					:UDINT;
+	nEcProjectCrc							:UINT;
+
+(* act_Signals *)
+	bFSINModule1Channel1		   			:BOOL;
+	bFSINModule1Channel2		   			:BOOL;
+	bFSINModule1ModuleFault		   			:BOOL;
+	bFSINModule1ErrAck			   			:BOOL;
+
+	bFSINModule2Channel1		   			:BOOL;
+	bFSINModule2Channel2		   			:BOOL;
+	bFSINModule2ModuleFault		   			:BOOL;
+	bFSINModule2ErrAck			   			:BOOL;
+
+	bFSINModule3Channel1		   			:BOOL;
+	bFSINModule3Channel2		   			:BOOL;
+	bFSINModule3ModuleFault		   			:BOOL;
+	bFSINModule3ErrAck			   			:BOOL;
+
+	bFSINModule4Channel1		   			:BOOL;
+	bFSINModule4Channel2		   			:BOOL;
+	bFSINModule4ModuleFault		   			:BOOL;
+	bFSINModule4ErrAck			   			:BOOL;
+
+	bFSINModule5Channel1		   			:BOOL;
+	bFSINModule5Channel2		   			:BOOL;
+	bFSINModule5ModuleFault		   			:BOOL;
+	bFSINModule5ErrAck			   			:BOOL;
+
+	bFSINModule6Channel1		   			:BOOL;
+	bFSINModule6Channel2		  			:BOOL;
+	bFSINModule6ModuleFault		   			:BOOL;
+	bFSINModule6ErrAck			   			:BOOL;
+
+	bFSINModule7Channel1		   			:BOOL;
+	bFSINModule7Channel2		   			:BOOL;
+	bFSINModule7ModuleFault		   			:BOOL;
+	bFSINModule7ErrAck			   			:BOOL;
+
+	bFSINModule8Channel1		   			:BOOL;
+	bFSINModule8Channel2		  			:BOOL;
+	bFSINModule8ModuleFault		   			:BOOL;
+	bFSINModule8ErrAck			   			:BOOL;
+
+	bFSINModule9Channel1		   			:BOOL;
+	bFSINModule9ModuleFault1	   			:BOOL;
+	bFSINModule9ErrAck1			   			:BOOL;
+	bFSINModule9Channel2		   			:BOOL;
+	bFSINModule9ModuleFault2	   			:BOOL;
+	bFSINModule9ErrAck2			   			:BOOL;
+
+	bFSINModule10Channel1		   			:BOOL;
+	bFSINModule10ModuleFault1	   			:BOOL;
+	bFSINModule10ErrAck1		   			:BOOL;
+	bFSINModule10Channel2		   			:BOOL;
+	bFSINModule10ModuleFault2	  			:BOOL;
+	bFSINModule10ErrAck2		   			:BOOL;
+
+	(* Outputs *)	
+	bFSOUTModule1Channel1		   			:BOOL;
+	bFSOUTModule1Channel2		   			:BOOL;
+	bFSOUTModule1Channel3		   			:BOOL;
+	bFSOUTModule1Channel4		   			:BOOL;
+	bFSOUTModule1ModuleFault			  	:BOOL;
+	bFSOUTModule1ErrAck			   			:BOOL;
+	
+	bFSOUTModule2Channel1		   			:BOOL;
+	bFSOUTModule2Channel2		   			:BOOL;
+	bFSOUTModule2Channel3		   			:BOOL;
+	bFSOUTModule2Channel4		   			:BOOL;
+	bFSOUTModule2ModuleFault			   	:BOOL;
+	bFSOUTModule2ErrAck			 			:BOOL;
+	
+	bFSOUTModule3Channel1		   			:BOOL;
+	bFSOUTModule3Channel2		   			:BOOL;
+	bFSOUTModule3Channel3		   			:BOOL;
+	bFSOUTModule3Channel4		   			:BOOL;
+	bFSOUTModule3ModuleFault	   			:BOOL;
+	bFSOUTModule3ErrAck			   			:BOOL;
+	
+	bFSOUTModule4Channel1		   			:BOOL;
+	bFSOUTModule4Channel2		   			:BOOL;
+	bFSOUTModule4Channel3		   			:BOOL;
+	bFSOUTModule4Channel4		   			:BOOL;
+	bFSOUTModule4ModuleFault	   			:BOOL;
+	bFSOUTModule4ErrAck			   			:BOOL;
+	
+	bFSOUTModule5Channel1		   			:BOOL;
+	bFSOUTModule5Channel2		   			:BOOL;
+	bFSOUTModule5Channel3		  			:BOOL;
+	bFSOUTModule5Channel4		   			:BOOL;
+	bFSOUTModule5ModuleFault	   			:BOOL;
+	bFSOUTModule5ErrAck			  			:BOOL;
+	
+	bFSOUTModule6Channel1		   			:BOOL;
+	bFSOUTModule6Channel2		   			:BOOL;
+	bFSOUTModule6Channel3		   			:BOOL;
+	bFSOUTModule6Channel4		   			:BOOL;
+	bFSOUTModule6ModuleFault	   			:BOOL;
+	bFSOUTModule6ErrAck			   			:BOOL;
+	
+	bFSOUTRelaisModuleChannel1	   			:BOOL;
+	bFSOUTRelaisModuleChannel2	   			:BOOL;
+	bFSOUTRelaisModuleChannel3	   			:BOOL;
+	bFSOUTRelaisModuleChannel4	   			:BOOL;
+	bFSOUTRelaisModuleFault		   			:BOOL;
+	bFSOUTRelaisModuleErrAck	   			:BOOL;
+	
+(* act_ConnectionDiag *)
+	sDiag									:STRING;
+	sFault									:STRING;						(* FailSafe Error (Hardware)*)
+	bError									:BOOL;							(* TwinSAFE-Error *)
+	
+(* act_ConnectionState *)
+	sState									:STRING;
+	
+	(* act_ReadDiagObjects *)
+	stSlaveTemp								:ST_TsSlave2Temp;
+	bIntTempWarning1						:BOOL;							(* Temperature warning: T1 *)
+	bIntTempWarning2						:BOOL;							(* Temperature warning: T2 *)
+	stTsDiagObjectsBitsEK1960				:ARRAY[1..2] OF ST_TsDeviceInfoDataEK1960;
+	
+END_STRUCT
+END_TYPE
+(*End*)]]></Declaration>
+  </DUT>
+</TcPlcObject>

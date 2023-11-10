@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsConnectionInfoEK1914" Id="{8a61da06-eb2d-4ee6-8a49-abd3afd930a5}">
+    <Declaration><![CDATA[//{attribute 'pack_mode' := '0'}
+TYPE ST_TsConnectionInfoEK1914 :
+(*******************************************************************************************************
+Description			:	Connection information data of EtherCAT Slaves with 2 byte input and 1 byte output safe data  
+Supported terminals : 	EK1914
+Date 				:	04.11.2018
+********************************************************************************************************)
+STRUCT
+
+	nState  								:USINT;
+	nDiag 	 								:USINT;
+	nInOutSafeDataByte1						:BYTE;
+	nInOutSafeDataByte2						:BYTE;
+
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

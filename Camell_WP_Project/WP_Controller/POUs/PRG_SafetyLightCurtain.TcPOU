@@ -3,14 +3,65 @@
   <POU Name="PRG_SafetyLightCurtain" Id="{9fc58935-82cf-401e-98fd-fe4f9b763d73}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SafetyLightCurtain
 VAR
+	ErrAck AT %Q* 	: BOOL;
+	RstEstop AT %Q* : BOOL;
+	RunStop AT %Q* 	: BOOL;
+	ComErr AT %I* 	: BOOL;
+	FbErr AT %I* 	: BOOL;
+	OutErr AT %I* 	: BOOL;
+	
+	a : R_TRIG;
+	ncounter:INT:=0;
+	
+	//=== TwinSAFE Diagnostic ===//
+	// target system
+		wProjectCrc 	AT %I*	: WORD;
+		idiSerialnumber AT %I* 	: UDINT;
+	//Group 1
+		fbTsGroup_1			: FB_TwinSafeGroupExt;
+		stTsGroupInfo		: ST_TsGroupInfo;
+	//TwinSAFE Connection
+		fbTsConnection_EL6910	: FB_TwinSafeConnectionEL6910;
+		fbTsConnection_EL1904	: FB_TwinSafeConnectionEL1904;
+		fbTsConnection_EL2912	: FB_TwinSafeConnectionEL2912;
+	//Twinsafe function block
+		fbTsFB_Estop1			: FB_TwinSafeFB;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL.bSafeRedLedOutput := GVL.bSafeRedLedInput;
-GVL.bSafeRestartSignal:=GVL.bSafeRestartSignalInput;]]></ST>
+      <ST><![CDATA[RstEstop:=IO.bRestart;
+a(CLK:=IO.bRun , Q=> );
+IF a.Q THEN
+	ncounter:=ncounter+1;
+	IF ncounter >1 THEN
+		ncounter:=0;
+	END_IF
+END_IF
+
+IF ncounter = 1 THEN
+	RunStop:=TRUE;
+	ELSE RunStop:=FALSE;
+END_IF
+
+//Diagnostic
+//TwinSAFE (Group 1)
+fbTsGroup_1(
+	bRun:= IO.bRun, 
+	bErrAck:= ErrAck, 
+	sName:= 'Gr01_Estop');
+//TwinSAFE connection
+fbTsConnection_EL6910(tCoEReadCycle :=T#2S);
+fbTsConnection_EL1904(tCoEReadCycle	:=T#2S) ;
+fbTsConnection_EL2912(tCoEReadCycle	:=T#2S);
+//Twinsafe Function Block
+fbTsFB_Estop1(
+	sName:= 'FBEstop1', 
+	eFBType:= E_TsFbType.FB_TYPE_ESTOP, 
+	nFbId:= 1);]]></ST>
     </Implementation>
     <LineIds Name="PRG_SafetyLightCurtain">
-      <LineId Id="5" Count="0" />
+      <LineId Id="39" Count="22" />
+      <LineId Id="64" Count="4" />
       <LineId Id="9" Count="0" />
     </LineIds>
   </POU>

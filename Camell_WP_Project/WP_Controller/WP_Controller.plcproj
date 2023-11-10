@@ -18,9 +18,210 @@
     <LibraryReferences>{fa260c09-4112-4426-98b4-7791bb82e692}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\EtherCATDiagnostic\E_EcDiacStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\EtherCATDiagnostic\E_EcGetSlaveName.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\EtherCATDiagnostic\E_EcSystemStatus.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\EtherCATDiagnostic\ST_EcTerminalDiagInfo.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\ST_AdsAddr.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\E_TsDiagnosisObjektsFA10AX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\E_TsErrIndicesFA82AX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\ST_TsConnectionInfoAX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\ST_TsControlWordAX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\ST_TsDiagObjectsFA10AX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\ST_TsErrIndicesFA82AX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\ST_TsSlaveInfoAX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805\ST_TsStatusWordAX5805.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1914\ST_TsConnectionInfoEK1914.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1914\ST_TsDiagObjectsBitsEK1914.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1914\ST_TsDiagObjectsEK1914.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1914\ST_TsSlaveInfoEK1914.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1960\ST_TsConnectionInfoEK1960.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1960\ST_TsDeviceInfoDataEK1960.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1960\ST_TsDiagObjectsEK1960.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1960\ST_TsSlaveInfoEK1960.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1904\ST_TsConnectionInfoEL1904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1904\ST_TsDiagObjectsBitsEL1904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1904\ST_TsDiagObjectsEL1904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1904\ST_TsSlaveInfoEL1904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1918\ST_TsConnectionInfoEL1918.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1918\ST_TsDeviceInfoDataEL1918.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1918\ST_TsDiagObjectsEL1918.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1918\ST_TsSlaveInfoEL1918.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2904\ST_TsConnectionInfoEL2904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2904\ST_TsDiagObjectsBitsEL2904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2904\ST_TsDiagObjectsEL2904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2904\ST_TsSlaveInfoEL2904.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2911\ST_TsConnectionInfoEL2911.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2911\ST_TsDeviceInfoDataEL2911.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2911\ST_TsDiagObjectsEL2911.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2911\ST_TsSlaveInfoEL2911.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2912\ST_TsConnectionInfoEL2912.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2912\ST_TsDeviceInfoDataEL2912.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2912\ST_TsDiagObjectsEL2912.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2912\ST_TsSlaveInfoEL2912.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL3214\ST_TsConnectionInfoEL3214.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL3214\ST_TsSlaveInfoEL3214.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL5021\ST_TsConnectionInfoEL5021.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL5021\ST_TsSlaveInfoEL5021.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL6900\ST_TsHardwareDiagC.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL6900\ST_TsSlaveInfoEL6900.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL6910\ST_TsDeviceInfoDataC.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL6910\ST_TsSlaveInfoEL6910.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EP1957\ST_TsConnectionInfoEP1957.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EP1957\ST_TsDeviceInfoDataEP1957.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EP1957\ST_TsDiagObjectsEP1957.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\EP1957\ST_TsSlaveInfoEP1957.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\E_TsCycleDiagObj.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsConnectionInfo12Byte.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsConnectionInfo1Byte.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsConnectionInfo2Byte.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsConnectionInfo4Byte.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsConnectionInfo8Byte.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsSlave2Temp.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsSlave3Temp.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsSlaveAddress.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Connection\ST_TsSlaveAddressCRC.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Functionblocks\E_TsFbType.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Functionblocks\ST_TsFbInfo.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\TwinSAFE\TwinSAFE_Group\ST_TsGroupInfo.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\IO.TcGVL">
+      <SubType>Code</SubType>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
@@ -64,6 +265,27 @@
     <Compile Include="POUs\PRG_VfdModbusRtu.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_EcGetSlaveName.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_TwinSafeConnectionEL1904.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_TwinSafeConnectionEL2912.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_TwinSafeConnectionEL6910.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_TwinSafeFB.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_TwinSafeGroup.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TwinSAFE\FB_TwinSafeGroupExt.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\VISION.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -73,11 +295,37 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="DUTs\EtherCATDiagnostic" />
+    <Folder Include="DUTs\TwinSAFE" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\AX5805" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1914" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EK1960" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1904" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL1918" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2904" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2911" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL2912" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL3214" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL5021" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL6900" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EL6910" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Connection\EP1957" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Functionblocks" />
+    <Folder Include="DUTs\TwinSAFE\TwinSAFE_Group" />
     <Folder Include="GVLs" />
+    <Folder Include="POUs\TwinSAFE" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="CmpBitmapPool">
+      <DefaultResolution>CmpBitmapPool, * (System)</DefaultResolution>
+      <Namespace>CmpBitmapPool</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_EtherCAT">
+      <DefaultResolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</DefaultResolution>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_MC2</Namespace>
@@ -104,6 +352,7 @@
     </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Vision">
       <DefaultResolution>Tc3_Vision, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_Vision</Namespace>
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>

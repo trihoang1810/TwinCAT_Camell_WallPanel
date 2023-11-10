@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsDiagObjectsEK1960" Id="{288ce465-1a21-41bc-bd55-4a17d4aa5afc}">
+    <Declaration><![CDATA[TYPE ST_TsDiagObjectsEK1960 :
+(*******************************************************************************************************
+Description			:	Index 16#800E Diagnostic objects
+Supported terminals : 	EK1960
+Documentation 		:	EK1960 TwinSAFE compact-controller
+Version/Date 		:	V1.5.3/21.01.2019
+********************************************************************************************************)
+STRUCT
+
+	nDummyData1								:ARRAY[0..8] OF UINT;
+
+(* Sensor test error *)
+	nSensorTestError						:UINT;
+
+(* Error during two channel evaluation *)
+	nDuringTwoChannelEvaluationError		:UINT;
+
+(* Error in the safety mat operating mode: input pair disagree *)
+	nMatModeInputPairDisagreeError			:UINT;
+
+(* Error in the safety mat operating mode: external supply *)
+	nMatModeExternalSupplyError				:UINT;
+
+	nDummyData2								:ARRAY[0..2] OF UINT;
+
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsConnectionInfoEK1960" Id="{606eefef-268f-4b38-be07-ed13f787056a}">
+    <Declaration><![CDATA[TYPE ST_TsConnectionInfoEK1960 :
+(*******************************************************************************************************
+Description			:	Connection information data of EtherCAT Slaves with 12 byte safe data   
+Supported terminals : 	EK1960
+Date 				:	04.11.2018
+********************************************************************************************************)
+STRUCT
+
+	nState  								:USINT;
+	nDiag 	 								:USINT;
+	
+	nInOutSafeDataByte1	 					:BYTE;
+	nInOutSafeDataByte2	 					:BYTE;
+	nInOutSafeDataByte3	 					:BYTE;
+	nInOutSafeDataByte4 					:BYTE;
+	nInOutSafeDataByte5 					:BYTE;
+	nInOutSafeDataByte6 					:BYTE;
+	nInOutSafeDataByte7 					:BYTE;
+	nInOutSafeDataByte8 					:BYTE;
+	nInOutSafeDataByte9 					:BYTE;
+	nInOutSafeDataByte10					:BYTE;
+	nInOutSafeDataByte11					:BYTE;
+	nInOutSafeDataByte12					:BYTE;
+
+END_STRUCT
+END_TYPE
+(* End *)]]></Declaration>
+  </DUT>
+</TcPlcObject>

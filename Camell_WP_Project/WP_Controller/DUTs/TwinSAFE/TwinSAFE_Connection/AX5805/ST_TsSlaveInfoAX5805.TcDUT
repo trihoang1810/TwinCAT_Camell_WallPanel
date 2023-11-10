@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ST_TsSlaveInfoAX5805" Id="{17530888-d261-4d82-b1eb-cdafaafbee0b}">
+    <Declaration><![CDATA[TYPE ST_TsSlaveInfoAX5805 :
+STRUCT
+	
+(* act_EcSlaveIdentify *)
+	sEcSlaveType							:STRING(15);
+	sEcSlaveName							:STRING(31) := '';
+	bSlaveIdentify							:BOOL;
+	bSlaveTypeError							:BOOL;
+	
+(* act_ConnectionState *)
+	sState									:STRING;
+	
+(* act_ConnectionDiag *)
+	sDiag									:STRING;
+	sFault									:STRING;						(* FailSafe Error (Hardware)*)
+	bError									:BOOL;							(* TwinSAFE-Error *)
+	
+(* act_ReadDiagObjects *)
+	stSlaveTemp								:ST_TsSlave2Temp;
+	bTempWarning							:BOOL;							(* Temperature warning: T1, T2 *)
+
+	eErrIndicesFA82ErrorMC1					:E_TsErrIndicesFA82AX5805;
+	eErrIndicesFA82ErrorMC2					:E_TsErrIndicesFA82AX5805;
+	eErrIndicesFA82DiagnosisMC1				:E_TsErrIndicesFA82AX5805;
+	bErrIndicesFA82DiagnosisMC1Err			:BOOL;
+	eErrIndicesFA82DiagnosisMC2				:E_TsErrIndicesFA82AX5805;
+	bErrIndicesFA82DiagnosisMC2Err			:BOOL;	
+
+	eDiagObjFA10LowByteMC1					:E_TsDiagnosisObjektsFA10AX5805;
+	eDiagObjFA10HighByteMC1					:E_TsDiagnosisObjektsFA10AX5805;
+	eDiagObjFA10LowByteMC2					:E_TsDiagnosisObjektsFA10AX5805;
+	eDiagObjFA10HighByteMC2					:E_TsDiagnosisObjektsFA10AX5805;
+	
+(* act_Signals *)
+	stSignalStatusMC1						:ST_TsStatusWordAX5805;
+	stSignalControlStatusMC1				:ST_TsControlWordAX5805;
+	stSignalStatusMC2						:ST_TsStatusWordAX5805;
+	stSignalControlStatusMC2				:ST_TsControlWordAX5805;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
