@@ -81,13 +81,15 @@
 }
 </script>
 </div>
-<div id="RunFwButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="16" data-tchmi-left-unit="%" data-tchmi-text="Forward" data-tchmi-top="32.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.GVL.bButtonFw%/s%">
+<div id="RunFwButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="16" data-tchmi-left-unit="%" data-tchmi-text="Forward" data-tchmi-top="32.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.PRG_MotorDrive.bButtonFwVirtual%/s%">
 </div>
 <div id="RunBwButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="57" data-tchmi-left-unit="%" data-tchmi-text="Backward" data-tchmi-top="32.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.GVL.bButtonBw%/s%">
 </div>
-<div id="HaltButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="16" data-tchmi-left-unit="%" data-tchmi-text="Halt" data-tchmi-top="45.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.GVL.bButtonHalt%/s%">
+<div id="HaltButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="16" data-tchmi-left-unit="%" data-tchmi-text="Halt" data-tchmi-top="45.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.PRG_MotorDrive.bButtonHaltVirtual%/s%">
 </div>
 <div id="DriveAutoToggleButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="57" data-tchmi-left-unit="%" data-tchmi-text="Auto" data-tchmi-top="45.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.GVL.bButtonAuto%/s%">
 </div>
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="90" data-tchmi-height-unit="%" data-tchmi-left="2" data-tchmi-left-unit="%" data-tchmi-src="Images/motorDrive-removebg-preview.png" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="65" data-tchmi-width-unit="%">
 </div>
 </div>

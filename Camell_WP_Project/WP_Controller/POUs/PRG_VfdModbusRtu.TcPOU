@@ -28,8 +28,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbRTrigWrite(CLK:=bWrite, Q=>);
-fbRTrigEnable(CLK:=GVL.bEnable, Q=>);
-fbRTrigDisable(CLK:=GVL.bDisable, Q=>);
+fbRTrigEnable(CLK:= GVL.bRunVfd OR GVL.bEnable, Q=>);
+fbRTrigDisable(CLK:= GVL.bStopVfd OR GVL.bDisable, Q=>);
 fbRTrigReverseMotor(CLK:= GVL.bReverseMotor, Q=> );
 fbRTrigSetFrequency(CLK:= GVL.bSetMotorFrequency, Q=> );
 

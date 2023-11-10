@@ -213,4 +213,6 @@
 </script>
 </div>
 </div>
+<div id="TcHmiToggleButton_8" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-text="Led Turn on/off" data-tchmi-top="17" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-state-symbol="%s%PLC1.GVL.bLedEnableVirtualInputButton%/s%">
+</div>
 </div>

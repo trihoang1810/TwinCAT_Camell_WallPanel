@@ -25,6 +25,8 @@ VAR_GLOBAL
 	bButtonAuto AT %I*: BOOL; //Latch
 	
 	//VFD Modbus RTU
+	bRunVfd AT %I*: BOOL;
+	bStopVfd AT %I*: BOOL;
 	bEnable: BOOL; //Self reset
 	bDisable: BOOL; //Self reset
 	bReverseMotor: BOOL; //Self reset
@@ -35,12 +37,12 @@ VAR_GLOBAL
 	bModbusCoilBit1 : BOOL;
 	
 	// Virtual toggle buttons for write values using MODBUS RTU
-	bExecuteWriteCoils: BOOL:=TRUE;
+	bExecuteWriteCoils: BOOL;
 	bExecuteWriteRegs0: BOOL;
 	//bExecuteWriteRegs1: BOOL;
 
 	// Input STRING from HMI, MAXIMUM 20 characters
-	sInputFromHMI: STRING(20);		
+	sInputFromHMI: STRING(20):='Beckhoff VN';		
 
 	//Constant value for testing, used for EL2596
 	bLedEnable AT %Q*:BOOL:=TRUE;
@@ -48,7 +50,8 @@ VAR_GLOBAL
 	bOutputCurrent AT %Q*: UINT:=300;
 	
 	// Constant value for EL2809 controlling strobe
-	bLedEnableEL2xxx AT %Q*:BOOL:=TRUE; 
+	bLedEnableEL2xxx AT %Q*:BOOL;
+	bLedEnableVirtualInputButton: BOOL; 
 	
 	// Loadcell scaling variables
 	uLoadCellRawValue AT %I*: DINT;

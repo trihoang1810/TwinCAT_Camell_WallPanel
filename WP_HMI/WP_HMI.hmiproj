@@ -27,7 +27,7 @@
     <HmiViewportUserScaleable>Default</HmiViewportUserScaleable>
     <HmiPostProcessing>True</HmiPostProcessing>
     <Name>WP_HMI</Name>
-    <HmiCommunicationRouterPort>10100</HmiCommunicationRouterPort>
+    <HmiCommunicationRouterPort>10101</HmiCommunicationRouterPort>
     <HmiCommunicationServerAuthPort>13002</HmiCommunicationServerAuthPort>
     <HmiInitial>1.12.760.48</HmiInitial>
     <HmiRecent>1.12.760.54</HmiRecent>
@@ -112,6 +112,9 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
+    <Content Include="Contents\Home.content">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Contents\LoadcellGUI.content">
       <SubType>Content</SubType>
     </Content>
@@ -125,6 +128,21 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Contents\VisionGUI.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\architecture.jpg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\camell_WP_vfd.drawio.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\motorDrive-removebg-preview.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Safety-removebg-preview.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\thermocoupe-removebg-preview.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Server\TcHmiSqliteHistorize\TcHmiSqliteHistorize.Config.default.json">

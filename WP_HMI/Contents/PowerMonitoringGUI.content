@@ -14,7 +14,7 @@
 <div id="PmTextField_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="50" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Frequency" data-tchmi-value="%f%%s%PLC1.GVL.fFrequency%/s%.toFixed(2)%/f%" data-tchmi-unit="Hz">
 </div>
 </div>
-<div id="CurrentTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="26" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="40" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
+<div id="CurrentTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {
@@ -66,7 +66,7 @@
 ]
 </script>
 </div>
-<div id="VoltageTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="26" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="35" data-tchmi-top-unit="%" data-tchmi-width="40" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
+<div id="VoltageTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="35" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {
@@ -118,7 +118,7 @@
 ]
 </script>
 </div>
-<div id="PowerTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="26.0" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="68" data-tchmi-top-unit="%" data-tchmi-width="40" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
+<div id="PowerTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="68" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {

@@ -5,7 +5,7 @@
 VAR
 	hr					: HRESULT;
 	
-	fbControl			: FB_VN_GevCameraControl;
+	fbControl			: FB_VN_SimpleCameraControl;
 	eState				: ETcVnCameraState;
 	
 	// Image
@@ -44,7 +44,13 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[eState := fbControl.GetState();
+      <ST><![CDATA[IF GVL.bLedEnableVirtualInputButton THEN
+	GVL.bLedEnableEL2xxx := TRUE;
+ELSE
+	GVL.bLedEnableEL2xxx:= FALSE;
+END_IF
+
+eState := fbControl.GetState();
 
 CASE eState OF
 	TCVN_CS_INITIAL, 			(* The camera controller is in the initial state and ready to establish the connection to the camera. *)
@@ -63,6 +69,7 @@ CASE eState OF
 			sCodeAsString :='Scanning... No code found!';
 			// Conver color space from grayscale to RGB, Display input image (without processing)
 			hr:=F_VN_ConvertColorSpace(ipImage,ipImageResult,ETcVnColorSpaceTransform.TCVN_CST_GRAY_TO_RGB,hr);
+			//hr:= F_VN_CopyImage(ipImage,ipImageResult,hr);
 			hr:=F_VN_CopyImage(ipImageResult,ipImageWork,hr);
 			hr:= F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImage,ipDestImage:=ipImageDispl,hrPrev:=hr);
 			// Pre result image processing
@@ -125,7 +132,14 @@ CASE eState OF
 END_CASE]]></ST>
     </Implementation>
     <LineIds Name="VISION">
-      <LineId Id="47" Count="77" />
+      <LineId Id="167" Count="0" />
+      <LineId Id="169" Count="0" />
+      <LineId Id="171" Count="1" />
+      <LineId Id="170" Count="0" />
+      <LineId Id="168" Count="0" />
+      <LineId Id="47" Count="18" />
+      <LineId Id="214" Count="0" />
+      <LineId Id="66" Count="58" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

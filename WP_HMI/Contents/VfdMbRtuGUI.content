@@ -1,6 +1,6 @@
 <div id="VfdContent" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="1080" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top-unit="%" data-tchmi-right-unit="%" data-tchmi-bottom-unit="%">
 
-<div id="ParamsContainer_2" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-right="2" data-tchmi-right-unit="%">
+<div id="ParamsContainer_2" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top="21.5" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-right="2" data-tchmi-right-unit="%">
 <div id="VfdHeaderField" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Name" data-tchmi-value="Value">
 </div>
 <div id="EnableButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="16" data-tchmi-left-unit="%" data-tchmi-text="Enable" data-tchmi-top="22.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size="150" data-tchmi-text-font-size-unit="%" data-tchmi-state-symbol="%s%PLC1.GVL.bEnable%/s%">
@@ -88,5 +88,7 @@
 }
 </script>
 </div>
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="55" data-tchmi-height-unit="%" data-tchmi-left="3" data-tchmi-left-unit="%" data-tchmi-src="Images/camell_WP_vfd.drawio.png" data-tchmi-top="22" data-tchmi-top-unit="%" data-tchmi-width="65" data-tchmi-width-unit="%">
 </div>
 </div>

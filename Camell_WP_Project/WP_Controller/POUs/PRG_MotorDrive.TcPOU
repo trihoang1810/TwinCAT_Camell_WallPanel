@@ -13,13 +13,15 @@ VAR
 	fbRTrigHalt: R_TRIG;
 	nAutoState: INT;
 	nSpeed: INT := 400; //degrees/sec
+	bButtonFwVirtual: BOOL;
+	bButtonHaltVirtual: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbEnableAxes.bEnableAxes := TRUE;
-fbRTrigMoveFW(CLK:=GVL.bButtonFw, Q=>);
+fbRTrigMoveFW(CLK:=GVL.bButtonFw OR bButtonFwVirtual, Q=>);
 fbRTrigMoveBW(CLK:=GVL.bButtonBw, Q=>);
-fbRTrigHalt(CLK:=GVL.bButtonHalt, Q=>);
+fbRTrigHalt(CLK:=GVL.bButtonHalt OR bButtonHaltVirtual, Q=>);
 
 IF fbRTrigMoveFw.Q THEN
 	fbHalt1.Execute := FALSE;

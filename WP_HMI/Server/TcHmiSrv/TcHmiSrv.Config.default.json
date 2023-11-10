@@ -2647,6 +2647,23 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.bExecuteWriteCoils": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::bExecuteWriteCoils",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Virtual toggle buttons for write values using MODBUS RTU"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.bExecuteWriteRegs0": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -2673,6 +2690,16 @@
                         }
                     }
                 ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GVL.bLedEnableVirtualInputButton": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::bLedEnableVirtualInputButton",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
             },
             "USEMAPPING": true
         },
@@ -3116,6 +3143,45 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.IO.bRun": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::IO::bRun",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "attributes": {
+                            "TcAddressType": "Input"
+                        }
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_MotorDrive.bButtonFwVirtual": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_MotorDrive::bButtonFwVirtual",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_MotorDrive.bButtonHaltVirtual": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_MotorDrive::bButtonHaltVirtual",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.PRG_MotorDrive.nSpeed": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3130,6 +3196,636 @@
                         "comment": "degrees/sec"
                     }
                 ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.RunStop": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::RunStop",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "attributes": {
+                            "TcAddressType": "Output"
+                        }
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::bChannel1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "act_Signals",
+                        "propertyOrder": 17
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::bChannel2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 18
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel3": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::bChannel3",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 19
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel4": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::bChannel4",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 20
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bIntTempWarning1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::bIntTempWarning1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Temperature warning: T1",
+                        "propertyOrder": 14
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bIntTempWarning2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::bIntTempWarning2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Temperature warning: T2",
+                        "propertyOrder": 15
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.nEcSlaveFSoEAddr": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::nEcSlaveFSoEAddr",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT"
+                    },
+                    {
+                        "propertyOrder": 7
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.nEcSlaveSerialNumber": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::nEcSlaveSerialNumber",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UDINT"
+                    },
+                    {
+                        "propertyOrder": 8
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sDiag": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::sDiag",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "comment": "act_ConnectionDiag",
+                        "propertyOrder": 10
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sEcSlaveName": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::sEcSlaveName",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 31,
+                        "propertyOrder": 2
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sEcSlaveType": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::sEcSlaveType",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "comment": "act_EcSlaveIdentify",
+                        "maxLength": 15,
+                        "propertyOrder": 1
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::sState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "comment": "act_ConnectionState",
+                        "propertyOrder": 9
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.stSlaveTemp.nInternalTemperature1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::stSlaveTemp::nInternalTemperature1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "Temperature 1 [°C]",
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.stSlaveTemp.nInternalTemperature2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL1904::stTsSlaveInfo::stSlaveTemp::nInternalTemperature2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "Temperature 2 [°C]",
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.bFSOUTChannel1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::bFSOUTChannel1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "act_Signals \r\n Outputs",
+                        "propertyOrder": 18
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.bFSOUTChannel2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::bFSOUTChannel2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 19
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.bIntTempWarning1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::bIntTempWarning1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "Temperature warning: T1",
+                        "propertyOrder": 15
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.nEcProjectCrc": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::nEcProjectCrc",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT"
+                    },
+                    {
+                        "attributes": {
+                            "displaymode": "hex"
+                        },
+                        "propertyOrder": 5
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.nEcSlaveFSoEAddr": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::nEcSlaveFSoEAddr",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT"
+                    },
+                    {
+                        "propertyOrder": 8
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.nEcSlaveSerialNumber": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::nEcSlaveSerialNumber",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UDINT"
+                    },
+                    {
+                        "propertyOrder": 9
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sDiag": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::sDiag",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "comment": "act_ConnectionDiag",
+                        "propertyOrder": 11
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sEcSlaveName": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::sEcSlaveName",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 31,
+                        "propertyOrder": 2
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sEcSlaveType": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::sEcSlaveType",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "comment": "act_EcSlaveIdentify",
+                        "maxLength": 15,
+                        "propertyOrder": 1
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::sState",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                    },
+                    {
+                        "comment": "act_ConnectionState",
+                        "propertyOrder": 10
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.stSlaveTemp.nInternalTemperature1": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::stSlaveTemp::nInternalTemperature1",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "Temperature 1 [°C]",
+                        "propertyOrder": 1
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.stSlaveTemp.nInternalTemperature2": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL2912::stTsSlaveInfo::stSlaveTemp::nInternalTemperature2",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "Temperature 2 [°C]",
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.nEcSlaveFSoEAddr": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::nEcSlaveFSoEAddr",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT"
+                    },
+                    {
+                        "propertyOrder": 8
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.nEcSlaveProjectCRC": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::nEcSlaveProjectCRC",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UINT"
+                    },
+                    {
+                        "attributes": {
+                            "displaymode": "hex"
+                        },
+                        "propertyOrder": 5
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.nEcSlaveSerialNumber": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::nEcSlaveSerialNumber",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/UDINT"
+                    },
+                    {
+                        "propertyOrder": 9
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.sEcSlaveName": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::sEcSlaveName",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 31,
+                        "propertyOrder": 2
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.sEcSlaveType": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::sEcSlaveType",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "comment": "act_EcSlaveIdentify",
+                        "maxLength": 15,
+                        "propertyOrder": 1
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.stDeviceInfoDataC1.nTemperatureC": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::stDeviceInfoDataC1::nTemperatureC",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "Temperature controller [°C]",
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.stDeviceInfoDataC2.nTemperatureC": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_SafetyLightCurtain::fbTsConnection_EL6910::stTsSlaveInfo::stDeviceInfoDataC2::nTemperatureC",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/INT"
+                    },
+                    {
+                        "comment": "Temperature controller [°C]",
+                        "propertyOrder": 2
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_Thermocouple.bSwOffVirtual": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_Thermocouple::bSwOffVirtual",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_Thermocouple.bSwOnVirtual": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_Thermocouple::bSwOnVirtual",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
             },
             "USEMAPPING": true
         },
@@ -4422,8 +5118,10 @@
                 "PLC1.GVL.bButtonHalt": 3,
                 "PLC1.GVL.bDisable": 3,
                 "PLC1.GVL.bEnable": 3,
+                "PLC1.GVL.bExecuteWriteCoils": 3,
                 "PLC1.GVL.bExecuteWriteRegs0": 3,
                 "PLC1.GVL.bFan": 3,
+                "PLC1.GVL.bLedEnableVirtualInputButton": 3,
                 "PLC1.GVL.bLight": 3,
                 "PLC1.GVL.bModbusCoilBit0": 3,
                 "PLC1.GVL.bModbusCoilBit1": 3,
@@ -4451,7 +5149,46 @@
                 "PLC1.GVL.sInputFromHMI": 3,
                 "PLC1.GVL.stAxis1.NcToPlc.ActPos": 3,
                 "PLC1.GVL.uLoadCellScaledValue": 3,
+                "PLC1.IO.bRun": 3,
+                "PLC1.PRG_MotorDrive.bButtonFwVirtual": 3,
+                "PLC1.PRG_MotorDrive.bButtonHaltVirtual": 3,
                 "PLC1.PRG_MotorDrive.nSpeed": 3,
+                "PLC1.PRG_SafetyLightCurtain.RunStop": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel1": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel2": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel3": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel4": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bIntTempWarning1": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bIntTempWarning2": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.nEcSlaveFSoEAddr": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.nEcSlaveSerialNumber": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sDiag": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sEcSlaveName": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sEcSlaveType": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.sState": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.stSlaveTemp.nInternalTemperature1": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.stSlaveTemp.nInternalTemperature2": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.bFSOUTChannel1": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.bFSOUTChannel2": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.bIntTempWarning1": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.nEcProjectCrc": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.nEcSlaveFSoEAddr": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.nEcSlaveSerialNumber": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sDiag": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sEcSlaveName": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sEcSlaveType": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.sState": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.stSlaveTemp.nInternalTemperature1": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL2912.stTsSlaveInfo.stSlaveTemp.nInternalTemperature2": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.nEcSlaveFSoEAddr": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.nEcSlaveProjectCRC": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.nEcSlaveSerialNumber": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.sEcSlaveName": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.sEcSlaveType": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.stDeviceInfoDataC1.nTemperatureC": 3,
+                "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL6910.stTsSlaveInfo.stDeviceInfoDataC2.nTemperatureC": 3,
+                "PLC1.PRG_Thermocouple.bSwOffVirtual": 3,
+                "PLC1.PRG_Thermocouple.bSwOnVirtual": 3,
                 "PLC1.PRG_Thermocouple.fTemp": 3,
                 "PLC1.PRG_VfdModbusRtu.nSetFreqVal": 3,
                 "SetLocale": 3,

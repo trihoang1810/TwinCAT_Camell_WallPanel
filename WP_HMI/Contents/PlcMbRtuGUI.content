@@ -89,5 +89,7 @@
 </div>
 <div id="TcHmiToggleButton_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="59" data-tchmi-height-unit="px" data-tchmi-left="182" data-tchmi-left-unit="px" data-tchmi-text="Reset chain" data-tchmi-top="347" data-tchmi-top-unit="px" data-tchmi-width="114" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="15" data-tchmi-state-symbol="%s%PLC1.GVL.bModbusCoilBit1%/s%">
 </div>
+<div id="TcHmiButton_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="72" data-tchmi-height-unit="px" data-tchmi-left="626" data-tchmi-left-unit="px" data-tchmi-text="Send" data-tchmi-top="342" data-tchmi-top-unit="px" data-tchmi-width="107" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Auto" data-tchmi-text-font-style="Normal" data-tchmi-state-symbol="%s%PLC1.GVL.bExecuteWriteCoils%/s%">
+</div>
 </div>
 </div>

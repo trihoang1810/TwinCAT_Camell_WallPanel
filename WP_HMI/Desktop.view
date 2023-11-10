@@ -7,6 +7,10 @@
 <script data-tchmi-target-attribute="data-tchmi-navigation-structure" type="application/json">
 [
   {
+    "name": "Home",
+    "content": "Contents/Home.content"
+  },
+  {
     "name": "Machine Vision",
     "content": "Contents/VisionGUI.content"
   },

@@ -9,12 +9,14 @@ VAR
 	fbTONSwMode: TON;
 	fbRTrigSwOn: R_TRIG;
 	fbRTrigSwOff: R_TRIG;
+	bSwOnVirtual: BOOL;
+	bSwOffVirtual: bool;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fTemp := GVL.nTemp;
-fbRTrigSwOn(CLK:= GVL.bSwOn, Q=> );
-fbRTrigSwOff(CLK:= GVL.bSwOff, Q=> );
+fbRTrigSwOn(CLK:= GVL.bSwOn OR bSwOnVirtual, Q=> );
+fbRTrigSwOff(CLK:= GVL.bSwOff OR bSwOffVirtual, Q=> );
 
 CASE nMode OF
 	0: //Manual mode
