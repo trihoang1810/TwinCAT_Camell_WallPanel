@@ -1,20 +1,60 @@
 <div id="PmContent" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="1080" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top-unit="%" data-tchmi-right-unit="%" data-tchmi-bottom-unit="%">
 
-<div id="PMContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-right="2" data-tchmi-right-unit="%" data-tchmi-bottom-unit="%">
-<div id="PmTextField" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Name" data-tchmi-value="Value">
+<div id="PMContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top="10" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-right="2.8" data-tchmi-right-unit="%" data-tchmi-bottom-unit="%">
+<div id="PmTextField" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="13.1" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="7.3" data-tchmi-top-unit="%" data-tchmi-width="90.1" data-tchmi-width-unit="%" data-tchmi-name="Name" data-tchmi-value="Value" data-tchmi-right="28">
 </div>
-<div id="PmTextField_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="IL1" data-tchmi-value="%f%%s%PLC1.GVL.fIL1%/s%.toFixed(2)%/f%" data-tchmi-unit="A">
+<div id="PmTextField_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="13.1" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="20.4" data-tchmi-top-unit="%" data-tchmi-width="90.1" data-tchmi-width-unit="%" data-tchmi-name="IL1" data-tchmi-value="%f%%s%PLC1.GVL.fIL1%/s%.toFixed(2)%/f%" data-tchmi-unit="A" data-tchmi-right="28">
+
+
 </div>
-<div id="PmTextField_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="20" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="L1-L2" data-tchmi-value="%f%%s%PLC1.GVL.fUL1%/s%.toFixed(2)%/f%" data-tchmi-unit="V">
+<div id="PmTextField_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="13.1" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="33.4" data-tchmi-top-unit="%" data-tchmi-width="90.1" data-tchmi-width-unit="%" data-tchmi-name="L1-L2" data-tchmi-value="%f%%s%PLC1.GVL.fUL1%/s%.toFixed(2)%/f%" data-tchmi-unit="V" data-tchmi-right="28">
 </div>
-<div id="PmTextField_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="30" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Active Power" data-tchmi-value="%f%%s%PLC1.GVL.fActivePower%/s%.toFixed(2)%/f%" data-tchmi-unit="W">
+<div id="PmTextField_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="46.5" data-tchmi-top-unit="%" data-tchmi-width="90.1" data-tchmi-width-unit="%" data-tchmi-name="Active Power" data-tchmi-value="%f%%s%PLC1.GVL.fActivePower%/s%.toFixed(2)%/f%" data-tchmi-unit="W" data-tchmi-height="13.1" data-tchmi-right="28">
 </div>
-<div id="PmTextField_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="40" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Φ1" data-tchmi-value="%f%%s%PLC1.GVL.fcosphi1%/s%.toFixed(2)%/f%">
+<div id="PmTextField_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="13.1" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="59.6" data-tchmi-top-unit="%" data-tchmi-width="90.1" data-tchmi-width-unit="%" data-tchmi-name="Φ1" data-tchmi-value="%f%%s%PLC1.GVL.fcosphi1%/s%.toFixed(2)%/f%" data-tchmi-right="36">
 </div>
-<div id="PmTextField_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="50" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Frequency" data-tchmi-value="%f%%s%PLC1.GVL.fFrequency%/s%.toFixed(2)%/f%" data-tchmi-unit="Hz">
+<div id="PmTextField_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="13.1" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top="72.7" data-tchmi-top-unit="%" data-tchmi-width="90.1" data-tchmi-width-unit="%" data-tchmi-name="Frequency" data-tchmi-value="%f%%s%PLC1.GVL.fFrequency%/s%.toFixed(2)%/f%" data-tchmi-unit="Hz" data-tchmi-right="28">
 </div>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
+[
+  {
+    "color": {
+      "color": "rgba(73, 73, 73, 1)"
+    },
+    "offsetX": 5.0,
+    "offsetXUnit": "px",
+    "offsetY": 5.0,
+    "offsetYUnit": "px",
+    "inset": false,
+    "blur": 5.0,
+    "blurUnit": "px",
+    "spread": -2.0,
+    "spreadUnit": "px"
+  }
+]
+</script>
 </div>
-<div id="CurrentTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
+<div id="CurrentTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="35.0" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {
@@ -66,7 +106,7 @@
 ]
 </script>
 </div>
-<div id="VoltageTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="35" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
+<div id="VoltageTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5.0" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="68.2" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {
@@ -118,7 +158,7 @@
 ]
 </script>
 </div>
-<div id="PowerTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="68" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
+<div id="PowerTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="30" data-tchmi-height-unit="%" data-tchmi-left="5" data-tchmi-left-unit="%" data-tchmi-start="PT30S" data-tchmi-top="3.1" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-y-main-tick-steps="4" data-tchmi-show-y-sub-ticks="false" data-tchmi-show-legend="false" data-tchmi-grid-line-style="Dotted" data-tchmi-show-menu-bar="false">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {
@@ -168,6 +208,48 @@
     "symbol": "PLC1.GVL.fActivePower"
   }
 ]
+</script>
+</div>
+<div id="TcHmiContainer_28" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="40" data-tchmi-height-unit="%" data-tchmi-left="67.2" data-tchmi-left-unit="%" data-tchmi-top="45" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%">
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_5" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="90" data-tchmi-height-unit="%" data-tchmi-left="3.5" data-tchmi-left-unit="%" data-tchmi-src="Imports/Images/powermonitoring.drawio.png" data-tchmi-top="6.0" data-tchmi-top-unit="%" data-tchmi-width="90" data-tchmi-width-unit="%">
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
+[
+  {
+    "color": {
+      "color": "rgba(58, 58, 58, 1)"
+    },
+    "offsetX": 5.0,
+    "offsetXUnit": "px",
+    "offsetY": 5.0,
+    "offsetYUnit": "px",
+    "inset": false,
+    "blur": 5.0,
+    "blurUnit": "px",
+    "spread": -2.0,
+    "spreadUnit": "px"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
 </script>
 </div>
 </div>

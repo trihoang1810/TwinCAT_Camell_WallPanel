@@ -5456,7 +5456,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{A2750A2F-9157-46E4-826D-100FB9870AAF}" Name="WP_Controller" PrjFilePath="WP_Controller\WP_Controller.plcproj" TmcFilePath="WP_Controller\WP_Controller.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WP_Controller\WP_Controller.tmc" TmcHash="{AADB237B-C16F-1ABB-6FEE-8140E891A33F}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WP_Controller\WP_Controller.tmc" TmcHash="{E67C1795-8617-3CB0-0E28-F5B8DAF39F35}">
 					<Name>WP_Controller Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -5530,14 +5530,14 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL6910.stEcAdsAddr</Name>
-							<Comment><![CDATA[ [TwinSAFE logic] e.g. EL69xx \ Connection Info Data \ [Path] Info Data]]></Comment>
-							<Type GUID="{81B9BE57-2B4A-C40F-AB4A-60698BE1945B}">ST_AdsAddr</Type>
-						</Var>
-						<Var>
 							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL6910.nEcSlaveState</Name>
 							<Comment><![CDATA[ EL6910 \ InfoData \ State ]]></Comment>
 							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL6910.stEcAdsAddr</Name>
+							<Comment><![CDATA[ [TwinSAFE logic] e.g. EL69xx \ Connection Info Data \ [Path] Info Data]]></Comment>
+							<Type GUID="{81B9BE57-2B4A-C40F-AB4A-60698BE1945B}">ST_AdsAddr</Type>
 						</Var>
 						<Var>
 							<Name>PRG_SafetyLightCurtain.fbTsConnection_EL1904.stInfoData</Name>

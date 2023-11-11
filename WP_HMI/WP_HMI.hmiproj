@@ -145,6 +145,21 @@
     <Content Include="Images\thermocoupe-removebg-preview.png">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Imports\Images\PLCmodbusRTU.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\powermonitoring.drawio.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\thermocouple.drawio-0.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\thermocouple.drawio.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\Untitled Diagram.drawio.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Server\TcHmiSqliteHistorize\TcHmiSqliteHistorize.Config.default.json">
       <SubType>Content</SubType>
     </Content>

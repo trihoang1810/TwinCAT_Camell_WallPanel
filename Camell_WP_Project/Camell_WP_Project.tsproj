@@ -5456,7 +5456,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{A2750A2F-9157-46E4-826D-100FB9870AAF}" Name="WP_Controller" PrjFilePath="WP_Controller\WP_Controller.plcproj" TmcFilePath="WP_Controller\WP_Controller.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WP_Controller\WP_Controller.tmc" TmcHash="{A79AA996-DCA1-4048-ED7E-9A26179E2B7F}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="WP_Controller\WP_Controller.tmc" TmcHash="{C6A41195-FAE1-9B99-F525-729BA2522A46}">
 					<Name>WP_Controller Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -5671,15 +5671,6 @@ External Setpoint Generation:
 							<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
 						<Var>
-							<Name>GVL.bValve1</Name>
-							<Comment><![CDATA[ Output signal variables for sneumatic valves ]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL.bValve2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL.bValve3</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -5693,6 +5684,15 @@ External Setpoint Generation:
 						</Var>
 						<Var>
 							<Name>GVL.bValve6</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.bValve1</Name>
+							<Comment><![CDATA[ Output signal variables for sneumatic valves ]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL.bValve2</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>

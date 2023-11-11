@@ -1,8 +1,20 @@
 <div id="TempContent" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="1080" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top-unit="%" data-tchmi-right-unit="%" data-tchmi-bottom-unit="%">
-<div id="ParamsContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-right-unit="%" data-tchmi-right="2">
+<div id="ParamsContainer" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left-unit="%" data-tchmi-top="24.7" data-tchmi-top-unit="%" data-tchmi-width="30" data-tchmi-width-unit="%" data-tchmi-right-unit="%" data-tchmi-right="2">
 <div id="TcUcTextFieldHeader" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-top-unit="%" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Name" data-tchmi-value="Value" data-tchmi-top="0">
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
 </div>
 <div id="TextField" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="10" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="%" data-tchmi-target-user-control="UserControls/TcUcTextField.usercontrol" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-name="Temperature" data-tchmi-value="%s%PLC1.PRG_Thermocouple.fTemp%/s%" data-tchmi-top-unit="%" data-tchmi-top="%ctrl%TcUcTextFieldHeader::Height%/ctrl%" data-tchmi-unit="°C">
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
 </div>
 <div id="FanStateButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-text="Fan" data-tchmi-top="%ctrl%LightStateButton::Top%/ctrl%" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.GVL.bFan%/s%" data-tchmi-left-unit="%" data-tchmi-left="%f%%ctrl%LightStateButton::Left%/ctrl%*2+%ctrl%LightStateButton::Width%/ctrl%%/f%">
 </div>
@@ -13,6 +25,46 @@
 <div id="LightOnButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="%ctrl%LightStateButton::Left%/ctrl%" data-tchmi-left-unit="%" data-tchmi-text="ON" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.PRG_Thermocouple.bSwOnVirtual%/s%" data-tchmi-top-unit="%" data-tchmi-top="%f%%ctrl%LightStateButton::Top%/ctrl%+%ctrl%LightStateButton::Height%/ctrl%+5%/f%">
 </div>
 </div>
-<div id="TcHmi_Controls_Beckhoff_TcHmiImage_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left="15" data-tchmi-left-unit="%" data-tchmi-src="Images/thermocoupe-removebg-preview.png" data-tchmi-top="0" data-tchmi-top-unit="%" data-tchmi-width="35" data-tchmi-width-unit="%">
+<div id="TcHmiContainer_32" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="91.9" data-tchmi-height-unit="%" data-tchmi-left="2.7" data-tchmi-left-unit="%" data-tchmi-top="4.4" data-tchmi-top-unit="%" data-tchmi-width="61.3" data-tchmi-width-unit="%">
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_6" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="85" data-tchmi-height-unit="%" data-tchmi-left="32" data-tchmi-left-unit="px" data-tchmi-src="Imports/Images/thermocouple.drawio-0.png" data-tchmi-top="41" data-tchmi-top-unit="px" data-tchmi-width="90" data-tchmi-width-unit="%">
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
+[
+  {
+    "color": {
+      "color": "rgba(112, 112, 112, 1)"
+    },
+    "offsetX": 5.0,
+    "offsetXUnit": "px",
+    "offsetY": 5.0,
+    "offsetYUnit": "px",
+    "inset": false,
+    "blur": 5.0,
+    "blurUnit": "px",
+    "spread": -2.0,
+    "spreadUnit": "px"
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
+</script>
 </div>
 </div>

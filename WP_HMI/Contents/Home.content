@@ -1,6 +1,6 @@
 <div id="Home" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="1080" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
-<div id="TcHmi_Controls_Beckhoff_TcHmiImage" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left="6" data-tchmi-left-unit="%" data-tchmi-src="Images/architecture.jpg" data-tchmi-top="2.5" data-tchmi-top-unit="%" data-tchmi-width="88" data-tchmi-width-unit="%">
-
+<div id="TcHmiContainer_31" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left="12.2" data-tchmi-left-unit="%" data-tchmi-top="2" data-tchmi-top-unit="%" data-tchmi-width="77.8" data-tchmi-width-unit="%">
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left="10.5" data-tchmi-left-unit="%" data-tchmi-src="Images/architecture.jpg" data-tchmi-top="2.5" data-tchmi-top-unit="%" data-tchmi-width="75" data-tchmi-width-unit="%">
 <script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
 {
   "topLeft": 10.0,
@@ -15,22 +15,46 @@
 </script>
 
 <script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
+[]
+</script>
+</div>
+
+<script data-tchmi-target-attribute="data-tchmi-background-color" type="application/json">
+{
+  "color": "rgba(255, 255, 255, 1)"
+}
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-box-shadow" type="application/json">
 [
   {
     "color": {
-      "color": "rgba(65, 64, 64, 1)"
+      "color": "rgba(90, 90, 90, 1)"
     },
-    "offsetX": 7.0,
+    "offsetX": 5.0,
     "offsetXUnit": "px",
-    "offsetY": 7.0,
+    "offsetY": 5.0,
     "offsetYUnit": "px",
     "inset": false,
-    "blur": 7.0,
+    "blur": 5.0,
     "blurUnit": "px",
-    "spread": -7.0,
+    "spread": -2.0,
     "spreadUnit": "px"
   }
 ]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-border-radius" type="application/json">
+{
+  "topLeft": 10.0,
+  "topRight": 10.0,
+  "bottomLeft": 10.0,
+  "bottomRight": 10.0,
+  "topLeftUnit": "px",
+  "topRightUnit": "px",
+  "bottomLeftUnit": "px",
+  "bottomRightUnit": "px"
+}
 </script>
 </div>
 </div>
