@@ -91,7 +91,9 @@
 </div>
 <div id="TcHmiButton_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="72" data-tchmi-height-unit="px" data-tchmi-left="486" data-tchmi-left-unit="px" data-tchmi-text="Send" data-tchmi-top="342" data-tchmi-top-unit="px" data-tchmi-width="107" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="20" data-tchmi-text-font-weight="Auto" data-tchmi-text-font-style="Normal" data-tchmi-state-symbol="%s%PLC1.GVL.bExecuteWriteCoils%/s%">
 </div>
-<div id="TcHmi_Controls_Beckhoff_TcHmiImage_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="464" data-tchmi-height-unit="px" data-tchmi-left="660" data-tchmi-left-unit="px" data-tchmi-src="Imports/Images/PLCmodbusRTU.png" data-tchmi-top="51" data-tchmi-top-unit="px" data-tchmi-width="451" data-tchmi-width-unit="px">
+<div id="TcHmiTextblock_69" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="45" data-tchmi-left-unit="px" data-tchmi-text="• Active state!" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="25">
+</div>
+<div id="TcHmi_Controls_Beckhoff_TcHmiImage_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="469" data-tchmi-height-unit="px" data-tchmi-left="643" data-tchmi-left-unit="px" data-tchmi-src="Imports/Images/PLCmodbusRTU-0.png" data-tchmi-top="44" data-tchmi-top-unit="px" data-tchmi-width="492" data-tchmi-width-unit="px">
 </div>
 </div>
 </div>

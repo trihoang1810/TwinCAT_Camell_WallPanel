@@ -3,6 +3,10 @@
   <POU Name="PRG_PLCModbusRTU" Id="{81d112d8-0152-408a-8ebf-7d6260d05547}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PLCModbusRTU
 VAR
+	bActivatePlcModbusWriteReg AT %I*: BOOL;
+	bDeactivatePlcModbusWriteReg AT %I*: BOOL;
+	bActiveState : BOOL;
+	
 	fbStrAscConversion: FB_StrASCConversion;
 	fbModbusMaster: ModbusRtuMasterV2_KL6x22B;
 	sWriteErrorId: MODBUS_ERRORS;
@@ -33,7 +37,6 @@ VAR
 	// Compressed form of coil registers
 	wWriteValueBits: WORD; //BIT0|BIT1|XXXXXXXXX
 	
-	test: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -50,11 +53,64 @@ END_FOR;
 // Convert STRING to ARRAY OF BYTE in ASCII TYPE
 fbStrAscConversion(sText:=GVL.sInputFromHMI,aASCIIRes => aWriteValueRegs0);
 
-//-----Write registers-------
+// Detect /deactivate state for function 
+IF 	bActivatePlcModbusWriteReg AND NOT bDeactivatePlcModbusWriteReg THEN
+	bActiveState:=TRUE;
+ELSIF 	bDeactivatePlcModbusWriteReg AND NOT bActivatePlcModbusWriteReg THEN
+	bActiveState:=FALSE;
+ELSE
+	bActiveState:=FALSE;
+END_IF
+
+IF bActiveState THEN
+	A_WriteRegs();	
+END_IF
+
+A_WriteCoils();]]></ST>
+    </Implementation>
+    <Action Name="A_WriteCoils" Id="{14d2f459-1a38-44ce-9670-d6112c8a11f9}">
+      <Implementation>
+        <ST><![CDATA[// ------Write coils-------
+// Convert Bit 0 and Bit 1 to WORD
+IF GVL.bModbusCoilBit0 THEN
+	IF GVL.bModbusCoilBit1 THEN
+		wWriteValueBits := 3;
+	ELSE
+		wWriteValueBits := 1;
+	END_IF
+ELSE
+	IF GVL.bModbusCoilBit1 THEN
+		wWriteValueBits := 2;
+	ELSE
+		wWriteValueBits := 0;
+	END_IF
+END_IF
+
+
+fbModbusMaster.WriteMultipleCoils(
+	UnitID:= mB_unitId, 
+	Quantity:= mB_quantity_coils, 
+	MBAddr:= mB_addr_bits, 
+	cbLength:= SIZEOF(wWriteValueBits), 
+	pMemoryAddr:= ADR(wWriteValueBits), 
+	Execute:= GVL.bExecuteWriteCoils, 
+	Timeout:= T#1000MS, 
+	BUSY=> bBusyState, 
+	Error=> , 
+	ErrorId=> sWriteErrorId, 
+	cbRead=>
+);]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_WriteRegs" Id="{78dc695e-3384-49ed-9c44-571c14816ed2}">
+      <Implementation>
+        <ST><![CDATA[//-----Write registers-------
 //==> Divide into 2 arrays[0..9] due to unstable sending sequences when try to push 20 registers subsequently
 
+	// Trigger for SEND button and clock pulse
 fbRTrigExecuteFirstReg(CLK:= GVL.bExecuteWriteRegs0, Q =>);
 fbRTrigClockPulse(CLK:= fbClockPulse.bExecuteClock, Q=>);
+
 IF fbRTrigExecuteFirstReg.Q THEN
 		bWrite := TRUE;
 END_IF
@@ -63,6 +119,7 @@ IF bWrite THEN
 	bTurnOnPulse:=TRUE;
 END_IF
 
+// Activate clockpulse
 fbClockPulse(bStart:= bTurnOnPulse,delON:= T#1600MS, bExecuteClock => );
 
 IF nCount = 0  AND bWrite = TRUE THEN
@@ -104,7 +161,7 @@ ELSIF nCount = 1 AND bWrite = TRUE THEN
 	);
 	IF nCountPulse = 2 THEN
 		bTurnOnPulse:=FALSE;
-	ELSIF nCountPulse >=3 AND bBusyState =FALSE THEN
+	ELSIF nCountPulse >=3 AND bBusyState =FALSE THEN // Wait until FB fishishes its functiong, avoid being suspended at busy state
 		nCount:=0;
 		nCountPulse:=0;
 		bWrite:=FALSE;
@@ -114,61 +171,7 @@ ELSIF nCount = 1 AND bWrite = TRUE THEN
 	IF fbRTrigClockPulse.Q THEN
 		nCountPulse:= nCountPulse+1;
 	END_IF
-END_IF
-
-// ------Write coils-------
-// Convert Bit 0 and Bit 1 to WORD
-IF GVL.bModbusCoilBit0 THEN
-	IF GVL.bModbusCoilBit1 THEN
-		wWriteValueBits := 3;
-	ELSE
-		wWriteValueBits := 1;
-	END_IF
-ELSE
-	IF GVL.bModbusCoilBit1 THEN
-		wWriteValueBits := 2;
-	ELSE
-		wWriteValueBits := 0;
-	END_IF
-END_IF
-
-
-fbModbusMaster.WriteMultipleCoils(
-	UnitID:= mB_unitId, 
-	Quantity:= mB_quantity_coils, 
-	MBAddr:= mB_addr_bits, 
-	cbLength:= SIZEOF(wWriteValueBits), 
-	pMemoryAddr:= ADR(wWriteValueBits), 
-	Execute:= GVL.bExecuteWriteCoils, 
-	Timeout:= T#1000MS, 
-	BUSY=> bBusyState, 
-	Error=> , 
-	ErrorId=> sWriteErrorId, 
-	cbRead=>
-);
-
-fbModbusMaster.WriteRegs(
-		UnitID:= mB_unitId,
-		Quantity:= mB_quantity_regs, 
-		MBAddr:= mB_addr_2nd10regs, 
-		cbLength:= SIZEOF(aValue2nd10Regs), 
-		pMemoryAddr:= ADR(aValue2nd10Regs), 
-		Execute:= test, 
-		Timeout:= T#1000MS, 
-		BUSY=> bBusyState, 
-		Error=> , 
-		ErrorId=> sWriteErrorId, 
-		cbRead=>
-	);]]></ST>
-    </Implementation>
-    <Action Name="A_WriteCoils" Id="{14d2f459-1a38-44ce-9670-d6112c8a11f9}">
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_WriteRegs" Id="{78dc695e-3384-49ed-9c44-571c14816ed2}">
-      <Implementation>
-        <ST><![CDATA[]]></ST>
+END_IF]]></ST>
       </Implementation>
     </Action>
     <Method Name="M_BoolWordConversion" Id="{dc064289-8b52-4625-96d0-b796ff4b46dc}">
@@ -185,58 +188,21 @@ END_VAR
       <LineId Id="396" Count="0" />
       <LineId Id="395" Count="0" />
       <LineId Id="31" Count="1" />
+      <LineId Id="550" Count="3" />
+      <LineId Id="556" Count="3" />
       <LineId Id="426" Count="0" />
-      <LineId Id="254" Count="0" />
-      <LineId Id="332" Count="0" />
-      <LineId Id="386" Count="0" />
-      <LineId Id="385" Count="0" />
-      <LineId Id="440" Count="0" />
-      <LineId Id="439" Count="0" />
-      <LineId Id="446" Count="0" />
-      <LineId Id="442" Count="0" />
-      <LineId Id="480" Count="0" />
-      <LineId Id="479" Count="0" />
-      <LineId Id="481" Count="1" />
-      <LineId Id="468" Count="0" />
-      <LineId Id="470" Count="0" />
-      <LineId Id="333" Count="0" />
-      <LineId Id="253" Count="0" />
-      <LineId Id="383" Count="0" />
-      <LineId Id="358" Count="5" />
-      <LineId Id="466" Count="0" />
-      <LineId Id="365" Count="4" />
-      <LineId Id="255" Count="0" />
-      <LineId Id="412" Count="5" />
-      <LineId Id="391" Count="0" />
-      <LineId Id="272" Count="0" />
-      <LineId Id="384" Count="0" />
-      <LineId Id="370" Count="12" />
-      <LineId Id="419" Count="0" />
-      <LineId Id="450" Count="0" />
-      <LineId Id="471" Count="0" />
-      <LineId Id="473" Count="0" />
-      <LineId Id="472" Count="0" />
-      <LineId Id="483" Count="0" />
-      <LineId Id="486" Count="0" />
-      <LineId Id="474" Count="1" />
-      <LineId Id="422" Count="1" />
-      <LineId Id="476" Count="0" />
       <LineId Id="256" Count="0" />
       <LineId Id="311" Count="0" />
-      <LineId Id="298" Count="0" />
-      <LineId Id="331" Count="0" />
-      <LineId Id="316" Count="12" />
-      <LineId Id="315" Count="0" />
-      <LineId Id="314" Count="0" />
-      <LineId Id="299" Count="11" />
-      <LineId Id="133" Count="0" />
-      <LineId Id="489" Count="12" />
-      <LineId Id="488" Count="0" />
+      <LineId Id="544" Count="1" />
+      <LineId Id="540" Count="0" />
+      <LineId Id="539" Count="0" />
     </LineIds>
     <LineIds Name="PRG_PLCModbusRTU.A_WriteCoils">
+      <LineId Id="2" Count="28" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="PRG_PLCModbusRTU.A_WriteRegs">
+      <LineId Id="2" Count="66" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="PRG_PLCModbusRTU.M_BoolWordConversion">

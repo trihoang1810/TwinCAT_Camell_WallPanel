@@ -93,5 +93,11 @@
 
 
 </div>
+<div id="TcHmiTextblock_68" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="40" data-tchmi-height-unit="px" data-tchmi-left="38" data-tchmi-left-unit="px" data-tchmi-text="• Active state!" data-tchmi-top="19" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-word-wrap="true" data-tchmi-text-font-size="25">
+
+
+
+
+</div>
 </div>
 </div>

@@ -3,55 +3,87 @@
   <POU Name="PRG_PneumaticValves" Id="{8240b1cd-240e-4117-82e0-94107c2fc5e1}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PneumaticValves
 VAR
+	bActivatePneumaticValves AT %I*: BOOL;
+	bDeactivatePneumaticValves AT %I*:BOOL;
+	bActiveState: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Valve 1
-IF GVL.bVirtualToggleButton1 THEN
-	GVL.bValve1:=TRUE;
+      <ST><![CDATA[// Detect activate/deactivate state for function 
+IF 	bActivatePneumaticValves AND NOT bDeactivatePneumaticValves THEN
+	bActiveState:=TRUE;
+ELSIF
+	bDeactivatePneumaticValves AND NOT bActivatePneumaticValves THEN
+	bActiveState:=FALSE;
 ELSE
-	GVL.bValve1:=FALSE;
-END_IF
-
-// Valve2
-IF GVL.bVirtualToggleButton2 THEN
-	GVL.bValve2:=TRUE;
-ELSE
-	GVL.bValve2:=FALSE;
-END_IF
-
-// Valve 3
-IF GVL.bVirtualToggleButton3 THEN
-	GVL.bValve3:=TRUE;
-ELSE
-	GVL.bValve3:=FALSE;
+	bActiveState:=FALSE;
 END_IF
 
 
-// Valve 4
-IF GVL.bVirtualToggleButton4 THEN
-	GVL.bValve4:=TRUE;
-ELSE
-	GVL.bValve4:=FALSE;
+// Function execution
+IF bActiveState THEN
+	// Valve 1
+	IF GVL.bVirtualToggleButton1 THEN
+		GVL.bValve1:=TRUE;
+	ELSE
+		GVL.bValve1:=FALSE;
+	END_IF
+	
+	// Valve2
+	IF GVL.bVirtualToggleButton2 THEN
+		GVL.bValve2:=TRUE;
+	ELSE
+		GVL.bValve2:=FALSE;
+	END_IF
+	
+	// Valve 3
+	IF GVL.bVirtualToggleButton3 THEN
+		GVL.bValve3:=TRUE;
+	ELSE
+		GVL.bValve3:=FALSE;
+	END_IF
+	
+	
+	// Valve 4
+	IF GVL.bVirtualToggleButton4 THEN
+		GVL.bValve4:=TRUE;
+	ELSE
+		GVL.bValve4:=FALSE;
+	END_IF
+	
+	// Valve 5
+	IF GVL.bVirtualToggleButton5 THEN
+		GVL.bValve5:=TRUE;
+	ELSE
+		GVL.bValve5:=FALSE;
+	END_IF
+	
+	// Valve 6
+	IF GVL.bVirtualToggleButton6 THEN
+		GVL.bValve6:=TRUE;
+	ELSE
+		GVL.bValve6:=FALSE;
+	END_IF
 END_IF
-
-// Valve 5
-IF GVL.bVirtualToggleButton5 THEN
-	GVL.bValve5:=TRUE;
-ELSE
-	GVL.bValve5:=FALSE;
-END_IF
-
-// Valve 6
-IF GVL.bVirtualToggleButton6 THEN
-	GVL.bValve6:=TRUE;
-ELSE
-	GVL.bValve6:=FALSE;
-END_IF]]></ST>
+]]></ST>
     </Implementation>
     <LineIds Name="PRG_PneumaticValves">
+      <LineId Id="70" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="71" Count="1" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="59" Count="0" />
       <LineId Id="6" Count="40" />
       <LineId Id="5" Count="0" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="67" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

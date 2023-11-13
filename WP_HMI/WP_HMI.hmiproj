@@ -139,10 +139,103 @@
     <Content Include="Images\motorDrive-removebg-preview.png">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Images\Navigation_icons\icons_analog-output_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_analog-output_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_analog-output_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_serial_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_serial_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_serial_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_temperature_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_temperature_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\icons_temperature_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\motion-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\motion-normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\motion-pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\plc-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\plc-normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\plc-pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\safety-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\safety-normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\safety-pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\scope_stop_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\scope_stop_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\scope_stop_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\startpage_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\startpage_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\startpage_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\vision-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\vision-normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\vision-pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\water-valve_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\water-valve_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Navigation_icons\water-valve_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Images\Safety-removebg-preview.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\thermocoupe-removebg-preview.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\PLCmodbusRTU-0.png">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Imports\Images\PLCmodbusRTU.png">
@@ -188,6 +281,7 @@
     <Folder Include="Fonts\" />
     <Folder Include="Images" />
     <Folder Include="Images\Manifest" />
+    <Folder Include="Images\Navigation_icons" />
     <Folder Include="Imports" />
     <Folder Include="Imports\Images" />
     <Folder Include="Imports\Videos" />

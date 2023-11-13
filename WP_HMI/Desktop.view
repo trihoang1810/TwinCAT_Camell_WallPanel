@@ -8,43 +8,73 @@
 [
   {
     "name": "Home",
-    "content": "Contents/Home.content"
+    "content": "Contents/Home.content",
+    "icon_a": "Images/Navigation_icons/startpage_active.svg",
+    "icon_n": "Images/Navigation_icons/scope_stop_normal.svg",
+    "icon_p": "Images/Navigation_icons/startpage_pressed.svg"
   },
   {
     "name": "Machine Vision",
-    "content": "Contents/VisionGUI.content"
+    "content": "Contents/VisionGUI.content",
+    "icon_a": "Images/Navigation_icons/vision-active.svg",
+    "icon_n": "Images/Navigation_icons/vision-normal.svg",
+    "icon_p": "Images/Navigation_icons/vision-pressed.svg"
   },
   {
     "name": "Temperature",
-    "content": "Contents/TemperatureGUI.content"
+    "content": "Contents/TemperatureGUI.content",
+    "icon_a": "Images/Navigation_icons/icons_temperature_active.svg",
+    "icon_n": "Images/Navigation_icons/icons_temperature_normal.svg",
+    "icon_p": "Images/Navigation_icons/icons_temperature_pressed.svg"
   },
   {
     "name": "Power Monitoring",
-    "content": "Contents/PowerMonitoringGUI.content"
+    "content": "Contents/PowerMonitoringGUI.content",
+    "icon_a": "Images/Navigation_icons/scope_stop_active.svg",
+    "icon_n": "Images/Navigation_icons/scope_stop_normal.svg",
+    "icon_p": "Images/Navigation_icons/scope_stop_pressed.svg"
   },
   {
     "name": "Load Cells",
-    "content": "Contents/LoadcellGUI.content"
+    "content": "Contents/LoadcellGUI.content",
+    "icon_a": "Images/Navigation_icons/icons_analog-output_active.svg",
+    "icon_n": "Images/Navigation_icons/icons_analog-output_normal.svg",
+    "icon_p": "Images/Navigation_icons/icons_analog-output_pressed.svg"
   },
   {
     "name": "Pneumatic Valves",
-    "content": "Contents/PneumaticValveGUI.content"
+    "content": "Contents/PneumaticValveGUI.content",
+    "icon_a": "Images/Navigation_icons/water-valve_active.svg",
+    "icon_n": "Images/Navigation_icons/water-valve_normal.svg",
+    "icon_p": "Images/Navigation_icons/water-valve_pressed.svg"
   },
   {
     "name": "Motor Drive",
-    "content": "Contents/MotorDriveGUI.content"
+    "content": "Contents/MotorDriveGUI.content",
+    "icon_a": "Images/Navigation_icons/motion-active.svg",
+    "icon_n": "Images/Navigation_icons/motion-normal.svg",
+    "icon_p": "Images/Navigation_icons/motion-pressed.svg"
   },
   {
     "name": "Safety",
-    "content": "Contents/SafetyGUI.content"
+    "content": "Contents/SafetyGUI.content",
+    "icon_a": "Images/Navigation_icons/safety-active.svg",
+    "icon_n": "Images/Navigation_icons/safety-normal.svg",
+    "icon_p": "Images/Navigation_icons/safety-pressed.svg"
   },
   {
     "name": "VFD Modbus RTU",
-    "content": "Contents/VfdMbRtuGUI.content"
+    "content": "Contents/VfdMbRtuGUI.content",
+    "icon_a": "Images/Navigation_icons/icons_serial_active.svg",
+    "icon_n": "Images/Navigation_icons/icons_serial_normal.svg",
+    "icon_p": "Images/Navigation_icons/icons_serial_pressed.svg"
   },
   {
     "name": "PLC Modbus RTU",
-    "content": "Contents/PlcMbRtuGUI.content"
+    "content": "Contents/PlcMbRtuGUI.content",
+    "icon_a": "Images/Navigation_icons/plc-active.svg",
+    "icon_n": "Images/Navigation_icons/plc-normal.svg",
+    "icon_p": "Images/Navigation_icons/plc-pressed.svg"
   }
 ]
 </script>

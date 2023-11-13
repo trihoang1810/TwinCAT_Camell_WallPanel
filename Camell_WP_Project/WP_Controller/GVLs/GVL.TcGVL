@@ -51,8 +51,8 @@ VAR_GLOBAL
 	
 	// Constant value for EL2809 controlling strobe
 	bLedEnableEL2xxx AT %Q*:BOOL;
-	bLedEnableVirtualInputButton: BOOL; 
-	
+	bLedEnableVirtualInputButton: BOOL; 	
+
 	// Loadcell scaling variables
 	uLoadCellRawValue AT %I*: DINT;
 	uLoadCellScaledValue: REAL;

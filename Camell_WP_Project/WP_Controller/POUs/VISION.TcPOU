@@ -3,6 +3,10 @@
   <POU Name="VISION" Id="{c83acc5f-4ec8-4485-ad39-a0115207ba4b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM VISION
 VAR
+	bActivateVisionAcqu AT %I*: BOOL;
+	bDeactivateVisionAcqu AT %I*: BOOL;
+	bActiveState : BOOL;	
+
 	hr					: HRESULT;
 	
 	fbControl			: FB_VN_SimpleCameraControl;
@@ -44,10 +48,22 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF GVL.bLedEnableVirtualInputButton THEN
+      <ST><![CDATA[
+// Enable LED
+IF GVL.bLedEnableVirtualInputButton THEN
 	GVL.bLedEnableEL2xxx := TRUE;
 ELSE
 	GVL.bLedEnableEL2xxx:= FALSE;
+END_IF
+
+// Detect activate/deactivate state for function 
+IF 	bActivateVisionAcqu AND NOT bDeactivateVisionAcqu THEN
+	bActiveState:=TRUE;
+ELSIF
+	bDeactivateVisionAcqu AND NOT bActivateVisionAcqu THEN
+	bActiveState:=FALSE;
+ELSE
+	bActiveState:=FALSE;
 END_IF
 
 eState := fbControl.GetState();
@@ -63,8 +79,9 @@ CASE eState OF
 		hr := fbControl.StartAcquisition();
 	
 	TCVN_CS_ACQUIRING: 			(* The camera is sending images (either streaming or manually triggered, depending on the configuration). *)
-	
-		hr := fbControl.GetCurrentImage(ipImage);
+		IF bActiveState THEN
+			hr := fbControl.GetCurrentImage(ipImage);
+		END_IF
 		IF  SUCCEEDED(hr) THEN
 			sCodeAsString :='Scanning... No code found!';
 			// Conver color space from grayscale to RGB, Display input image (without processing)
@@ -132,12 +149,18 @@ CASE eState OF
 END_CASE]]></ST>
     </Implementation>
     <LineIds Name="VISION">
+      <LineId Id="257" Count="0" />
+      <LineId Id="256" Count="0" />
       <LineId Id="167" Count="0" />
       <LineId Id="169" Count="0" />
       <LineId Id="171" Count="1" />
       <LineId Id="170" Count="0" />
+      <LineId Id="273" Count="9" />
       <LineId Id="168" Count="0" />
-      <LineId Id="47" Count="18" />
+      <LineId Id="47" Count="13" />
+      <LineId Id="285" Count="0" />
+      <LineId Id="284" Count="0" />
+      <LineId Id="62" Count="3" />
       <LineId Id="214" Count="0" />
       <LineId Id="66" Count="58" />
       <LineId Id="5" Count="0" />
