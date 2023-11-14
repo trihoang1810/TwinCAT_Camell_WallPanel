@@ -19,9 +19,9 @@ VAR_GLOBAL
 	
 	//Motor drive
 	stAxis1: AXIS_REF;
-	bButtonFw AT %I*: BOOL; //Self reset
-	bButtonBw AT %I*: BOOL; //Self reset
-	bButtonHalt AT %I*: BOOL; //Self reset
+	bButtonFw AT %I*: BOOL:=FALSE; //Self reset
+	bButtonBw AT %I*: BOOL:=FALSE; //Self reset
+	bButtonHalt AT %I*: BOOL:=FALSE; //Self reset
 	bButtonAuto AT %I*: BOOL; //Latch
 	
 	//VFD Modbus RTU
@@ -39,6 +39,7 @@ VAR_GLOBAL
 	// Virtual toggle buttons for write values using MODBUS RTU
 	bExecuteWriteCoils: BOOL;
 	bExecuteWriteRegs0: BOOL;
+	bExecuteWriteSingleRegForHmi: BOOL;
 	//bExecuteWriteRegs1: BOOL;
 
 	// Input STRING from HMI, MAXIMUM 20 characters

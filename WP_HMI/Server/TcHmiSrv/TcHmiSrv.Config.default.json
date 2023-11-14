@@ -2674,6 +2674,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GVL.bExecuteWriteSingleRegForHmi": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GVL::bExecuteWriteSingleRegForHmi",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.GVL.bFan": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3162,6 +3172,36 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.PRG_LoadcellScaling.bActiveState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_LoadcellScaling::bActiveState",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_LoadcellScaling.bSet300Gr": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_LoadcellScaling::bSet300Gr",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_LoadcellScaling.bZeroing": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_LoadcellScaling::bZeroing",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.PRG_MotorDrive.bButtonFwVirtual": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3182,6 +3222,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.PRG_MotorDrive.bEnableServo": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_MotorDrive::bEnableServo",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.PRG_MotorDrive.nSpeed": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3196,6 +3246,56 @@
                         "comment": "degrees/sec"
                     }
                 ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_PLCModbusRTU.bActiveState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_PLCModbusRTU::bActiveState",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_PLCModbusRTU.bModeAuto": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_PLCModbusRTU::bModeAuto",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_PLCModbusRTU.nChangeLangueCycle": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_PLCModbusRTU::nChangeLangueCycle",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/INT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_PLCModbusRTU.wValueSingleRegForHmi": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_PLCModbusRTU::wValueSingleRegForHmi",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/WORD"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.PRG_PneumaticValves.bActiveState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::PRG_PneumaticValves::bActiveState",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
             },
             "USEMAPPING": true
         },
@@ -3846,6 +3946,16 @@
             "MAPPING": "PLC1::PRG_VfdModbusRtu::nSetFreqVal",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/WORD"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.VISION.bActiveState": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::VISION::bActiveState",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
             },
             "USEMAPPING": true
         },
@@ -5120,6 +5230,7 @@
                 "PLC1.GVL.bEnable": 3,
                 "PLC1.GVL.bExecuteWriteCoils": 3,
                 "PLC1.GVL.bExecuteWriteRegs0": 3,
+                "PLC1.GVL.bExecuteWriteSingleRegForHmi": 3,
                 "PLC1.GVL.bFan": 3,
                 "PLC1.GVL.bLedEnableVirtualInputButton": 3,
                 "PLC1.GVL.bLight": 3,
@@ -5150,9 +5261,18 @@
                 "PLC1.GVL.stAxis1.NcToPlc.ActPos": 3,
                 "PLC1.GVL.uLoadCellScaledValue": 3,
                 "PLC1.IO.bRun": 3,
+                "PLC1.PRG_LoadcellScaling.bActiveState": 3,
+                "PLC1.PRG_LoadcellScaling.bSet300Gr": 3,
+                "PLC1.PRG_LoadcellScaling.bZeroing": 3,
                 "PLC1.PRG_MotorDrive.bButtonFwVirtual": 3,
                 "PLC1.PRG_MotorDrive.bButtonHaltVirtual": 3,
+                "PLC1.PRG_MotorDrive.bEnableServo": 3,
                 "PLC1.PRG_MotorDrive.nSpeed": 3,
+                "PLC1.PRG_PLCModbusRTU.bActiveState": 3,
+                "PLC1.PRG_PLCModbusRTU.bModeAuto": 3,
+                "PLC1.PRG_PLCModbusRTU.nChangeLangueCycle": 3,
+                "PLC1.PRG_PLCModbusRTU.wValueSingleRegForHmi": 3,
+                "PLC1.PRG_PneumaticValves.bActiveState": 3,
                 "PLC1.PRG_SafetyLightCurtain.RunStop": 3,
                 "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel1": 3,
                 "PLC1.PRG_SafetyLightCurtain.fbTsConnection_EL1904.stTsSlaveInfo.bChannel2": 3,
@@ -5191,6 +5311,7 @@
                 "PLC1.PRG_Thermocouple.bSwOnVirtual": 3,
                 "PLC1.PRG_Thermocouple.fTemp": 3,
                 "PLC1.PRG_VfdModbusRtu.nSetFreqVal": 3,
+                "PLC1.VISION.bActiveState": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteHistorize.DeleteDatabaseEntries": 3,

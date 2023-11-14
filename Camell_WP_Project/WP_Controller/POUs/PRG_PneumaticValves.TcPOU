@@ -15,8 +15,6 @@ IF 	bActivatePneumaticValves AND NOT bDeactivatePneumaticValves THEN
 ELSIF
 	bDeactivatePneumaticValves AND NOT bActivatePneumaticValves THEN
 	bActiveState:=FALSE;
-ELSE
-	bActiveState:=FALSE;
 END_IF
 
 
@@ -73,10 +71,7 @@ END_IF
       <LineId Id="56" Count="0" />
       <LineId Id="62" Count="0" />
       <LineId Id="73" Count="0" />
-      <LineId Id="63" Count="0" />
-      <LineId Id="74" Count="0" />
-      <LineId Id="76" Count="0" />
-      <LineId Id="64" Count="0" />
+      <LineId Id="63" Count="1" />
       <LineId Id="71" Count="1" />
       <LineId Id="60" Count="0" />
       <LineId Id="59" Count="0" />

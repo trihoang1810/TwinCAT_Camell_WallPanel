@@ -6,7 +6,15 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[PRG_Thermocouple();
+      <ST><![CDATA[
+// Enable LED for VISION
+IF GVL.bLedEnableVirtualInputButton THEN
+	GVL.bLedEnableEL2xxx := TRUE;
+ELSE
+	GVL.bLedEnableEL2xxx:= FALSE;
+END_IF
+
+PRG_Thermocouple();
 PRG_PowerMeasurement();
 PRG_MotorDrive();
 PRG_VfdModbusRtu();
@@ -16,6 +24,11 @@ PRG_PneumaticValves();
 PRG_SafetyLightCurtain();]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="24" Count="1" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="27" Count="2" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="22" Count="0" />
       <LineId Id="2" Count="0" />
       <LineId Id="6" Count="1" />
       <LineId Id="11" Count="0" />

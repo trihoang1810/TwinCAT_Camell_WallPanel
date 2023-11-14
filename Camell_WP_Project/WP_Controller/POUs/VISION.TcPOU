@@ -3,12 +3,10 @@
   <POU Name="VISION" Id="{c83acc5f-4ec8-4485-ad39-a0115207ba4b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM VISION
 VAR
+	hr					: HRESULT;
 	bActivateVisionAcqu AT %I*: BOOL;
 	bDeactivateVisionAcqu AT %I*: BOOL;
-	bActiveState : BOOL;	
-
-	hr					: HRESULT;
-	
+	bActiveState : BOOL;
 	fbControl			: FB_VN_SimpleCameraControl;
 	eState				: ETcVnCameraState;
 	
@@ -21,48 +19,30 @@ VAR
 	ipImageDispl		: ITcVnDisplayableImage;
 	ipImageWorkDispl	: ITcVnDisplayableImage;
 	ipImageResultDispl	: ITcVnDisplayableImage;
+//											[R , G , B , L]
+	aLowerBounds		: TcVnVector4_LREAL :=[30,45,90,0];
+	aUpperBounds		: TcVnVector4_LREAL :=[50,80,255,0];
 	
-	// QR Code
-	ipCodeDecodedList   :    ITcVnContainer; 
-	ipCodeContourList   :    ITcVnContainer;
-	sCodeAsString       :    STRING(255);
-	sErrorString		:	 STRING(255);
-	eBarcodeSearchDirection   :   ETcVnBarcodeSearchDirection := TCVN_BSD_ANY;
-	eBarcodeType              :   ETcVnBarcodeType := TCVN_BT_EAN13;
-
-
-	// Watchdog
-	hrWD                :    HRESULT;
-	//tStop               :    DINT := 20000; //qr code
-	tStop               :    DINT := 50000; //qr code
-	tRest               :    DINT;
-
-	// Color
-	aRedColor           :    TcVnVector4_LREAL := [255, 0, 0];
-	aGreenColor			:	 TcVnVector4_LREAL := [0, 255, 0];
-
-	// Return code
-	nReturnCode               :   DWORD;
-	sReturnCode               :   STRING;
-	sResultText               :   STRING;
+	ipContours			: ITcVnContainer;
+	nNumberofElements	: ULINT;
+	
+	aColorRed			: TcVnVector4_LREAL :=[255,0,0,0];
+	aColorGreen			: TcVnVector4_LREAL :=[0,255,0,0];
+	
+	ipIterator			: ITcVnForwardIterator;
+	ipContoursSingle	: ITcVnContainer;
+	fArea				: LREAL;
+	
+	aCenterOfMass		: TcVnPoint2_LREAL;
+	stRectangle			: TcVnRotatedRectangle;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-// Enable LED
-IF GVL.bLedEnableVirtualInputButton THEN
-	GVL.bLedEnableEL2xxx := TRUE;
-ELSE
-	GVL.bLedEnableEL2xxx:= FALSE;
-END_IF
-
-// Detect activate/deactivate state for function 
+      <ST><![CDATA[// Detect activate/deactivate state for function 
 IF 	bActivateVisionAcqu AND NOT bDeactivateVisionAcqu THEN
 	bActiveState:=TRUE;
 ELSIF
 	bDeactivateVisionAcqu AND NOT bActivateVisionAcqu THEN
-	bActiveState:=FALSE;
-ELSE
 	bActiveState:=FALSE;
 END_IF
 
@@ -82,65 +62,122 @@ CASE eState OF
 		IF bActiveState THEN
 			hr := fbControl.GetCurrentImage(ipImage);
 		END_IF
-		IF  SUCCEEDED(hr) THEN
-			sCodeAsString :='Scanning... No code found!';
-			// Conver color space from grayscale to RGB, Display input image (without processing)
-			hr:=F_VN_ConvertColorSpace(ipImage,ipImageResult,ETcVnColorSpaceTransform.TCVN_CST_GRAY_TO_RGB,hr);
-			//hr:= F_VN_CopyImage(ipImage,ipImageResult,hr);
-			hr:=F_VN_CopyImage(ipImageResult,ipImageWork,hr);
-			hr:= F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImage,ipDestImage:=ipImageDispl,hrPrev:=hr);
-			// Pre result image processing
-			hr := F_VN_PutTextExp(sCodeAsString, ipImageWork, 50, 100, TCVN_FT_HERSHEY_PLAIN, 5, aRedColor,3, TCVN_LT_4_CONNECTED, FALSE, hr);
-			hr:=F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImageWork,ipDestImage:=ipImageResultDispl,hrPrev:=hr);
+		IF SUCCEEDED(hr) THEN
+			
+			// debug *
+			hr := F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImage, ipDestImage:= ipImageDispl, hrPrev:= hr) ; 
+			
+			// convert color space
+			hr := F_VN_ConvertColorSpace(ipSrcImage:= ipImage, 
+										ipDestImage:= ipImageWork, 
+										eTransform:= ETcVnColorSpaceTransform.TCVN_CST_BAYER_RG_TO_RGB, 
+										hrPrev:= hr);
+										
+			//// copyImage
+			hr := F_VN_CopyImage(ipImageWork,ipImageResult,hr);
+										
+			// Debug **
+			//hr := F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImageWork, ipDestImage:= ipImageWorkDispl, hrPrev:= hr) ;
+			
+			// CheckColorRange
+			hr := F_VN_CheckColorRange(
+										ipSrcImage:= ipImageWork, 
+										ipDestImage:= ipImageWork, 
+										aLowerBounds:= aLowerBounds, 
+										aUpperBounds:= aUpperBounds, 
+										hrPrev:= hr);
+			
+			// Debug **
+			hr := F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImageWork, ipDestImage:= ipImageWorkDispl, hrPrev:= hr) ;
+			
+			// FindContours
+			hr := F_VN_FindContours(ipSrcImage:= ipImageWork, ipContours:= ipContours, hrPrev:= hr);
+			
+			//nNumberofElements := ipContours.GetElementNum(); wrong way
+			hr := F_VN_GetNumberOfElements(ipContainer:= ipContours, nNumberOfElements:= nNumberofElements, hrPrev:= hr);
+	
+//////-----------------------------
+			// LOOP
+			hr := F_VN_GetForwardIterator(ipContainer:= ipContours, ipIterator:= ipIterator, hrPrev:= hr);
+			
+			WHILE SUCCEEDED(hr) AND_THEN ipIterator.CheckIfEnd() <> S_OK DO
+				
+				// getContainer
+				hr := F_VN_GetContainer(ipIterator:= ipIterator, ipContainer:= ipContoursSingle, hrPrev:= hr);
+				hr := F_VN_IncrementIterator(ipIterator,hr); // !!!!!!
+				
+				//------------------------------------------
+				
+				hr := F_VN_ContourArea(ipContoursSingle,fArea,hr);
+				
+				IF fArea > 50_000 AND fArea < 400_000 THEN
+					
+					//// DrawContours
+					hr := F_VN_DrawContours(
+										ipContours:= ipContoursSingle, // !!!
+										nContourIndex:= -1, 
+										ipDestImage:= ipImageResult, 
+										aColor:= aColorRed, 
+										nThickness:= 5, 
+										hrPrev:= hr);
+										
+//					F_VN_ContourCenterOfMass
+					hr := F_VN_ContourCenterOfMass(ipContour:= ipContoursSingle, 
+													aCenterOfMass:= aCenterOfMass, 
+													hrPrev:= hr);
+//					F_VN_DrawPointExp
+					hr := F_VN_DrawPointExp(
+											nX:= TO_UDINT(aCenterOfMass[0]), 
+											nY:= TO_UDINT(aCenterOfMass[1]), 
+											ipDestImage:= ipImageResult, 
+											eShape:= ETcVnDrawShape.TCVN_DS_X, 
+											aColor:= aColorGreen, 
+											nSize:= 20, //5
+											nThickness:= 5, 
+											eLineType:= ETcVnLineType.TCVN_LT_4_CONNECTED, 
+											hrPrev:= hr);
+//					F_VN_EnclosingRectangle
+					hr := F_VN_EnclosingRectangle(ipPointSet:= ipContoursSingle, stRectangle:= stRectangle, hrPrev:= hr);
+//					F_VN_DrawRotatedRectangle
+					hr := F_VN_DrawRotatedRectangle(
+											stRectangle:= stRectangle, 
+											ipDestImage:= ipImageResult, 
+											aColor:= aColorRed, 
+											nThickness:= 5, 
+											hrPrev:= hr);
+//					F_VN_PutTextExp
+					hr := F_VN_PutTextExp(
+											sText:= 'BLUE', 
+											ipDestImage:= ipImageResult, 
+											nX:= TO_UDINT(stRectangle.aCenter[0] - stRectangle.stSize.fHeight/2), 
+											nY:= TO_UDINT(stRectangle.aCenter[1] - stRectangle.stSize.fHeight/2), 
+											eFontType:= ETcVnFontType.TCVN_FT_HERSHEY_COMPLEX, 
+											fFontScale:= 5, 
+											aColor:= aColorRed, 
+											nThickness:= 5, 
+											eLineType:= ETcVnLineType.TCVN_LT_4_CONNECTED, 
+											bBottomLeftOrigin:= FALSE, 
+											hrPrev:= hr);
+					
+				END_IF
+				
+			END_WHILE
 
-			// Execute the Barcode Reading Function with EAN13 selected monitored by the Watchdog-Function
-			hrWD := F_VN_StartRelWatchdog(tStop, hr);
-			(*hr := F_VN_ReadQRCodeExp(
-            ipSrcImage      :=  ipImage,
-            ipDecodedData   :=  ipCodeDecodedList,
-            ipContours      :=  ipCodeContourList,
-            nCodeNumber     :=  1,
-            eSearchStrategy :=  TCVN_CSS_ONLY_NOT_INVERTED + TCVN_CSS_ONLY_NOT_FLIPPED,
-            hrPrev          :=  hr
-   			 );*)
-	    	hr := F_VN_ReadBarcodeExp(
-               ipSrcImage         :=   ipImage,
-               ipDecodedData      :=   ipCodeDecodedList,
-               ipContours         :=   ipCodeContourList,
-               eBarcodeType       :=   eBarcodeType,
-               nCodeNumber        :=   1, 
-               eSearchDirection   :=   eBarcodeSearchDirection,
-               hrPrev             :=   hr);
-			hrWD := F_VN_StopWatchdog(hrWD, tRest => tRest);
-			//ADSLOGDINT(msgCtrlMask:=ADSLOG_MSGTYPE_MSGBOX,msgFmtStr:='hrResult1 %d',dintArg:=hr);
-			// Handle return-code
-			IF hr = S_OK THEN
-				// Prepare code result in string
-				hr := F_VN_ExportSubContainer_String(ipCodeDecodedList, 0, sCodeAsString, 255, hr);
-				sCodeAsString := CONCAT('Code: ', sCodeAsString);
-			ELSE
-				// Check for succeeded return codes or add specific error handling
-				CASE hr OF
-					S_FALSE: 
-						sResultText := 'No code found...'; 
+//////-----------------------------
+
+			//// DrawContours
+//			hr := F_VN_DrawContours(
+//									ipContours:= ipContours, 
+//									nContourIndex:= -1, 
+//									ipDestImage:= ipImageResult, 
+//									aColor:= aColorRed, 
+//									nThickness:= 5, 
+//									hrPrev:= hr);
 			
-					S_WATCHDOG_TIMEOUT: 
-						sResultText := 'Cancelled by watchdog...'; 
-				ELSE
-					// Extract error-code from HRESULT & react accordingly
-					nReturnCode := DINT_TO_DWORD(hr) AND 16#FFF; 
-					sReturnCode := DWORD_TO_HEXSTR(nReturnCode, 3, FALSE); 
-					sResultText := CONCAT('Returncode ', sReturnCode); 
-				END_CASE
-			END_IF
-			
-			// Draw Code Contour into Result Image
-		    hr := F_VN_DrawContours(ipCodeContourList, 0, ipImageResult, aGreenColor, 3, hr);
-			// Write Code into Result Image
-    		hr := F_VN_PutTextExp(sCodeAsString, ipImageResult, 50, 100, TCVN_FT_HERSHEY_PLAIN, 5, aGreenColor,3, TCVN_LT_4_CONNECTED, FALSE, hr);
-			// Write Code Reading proceeded time into Result Image
-			//sText := CONCAT(CONCAT('Time: ', DINT_TO_STRING(tStop - tRest)), 'us');
-			hr := F_VN_TransformIntoDisplayableImage(ipSrcImage:=ipImageResult, ipDestImage:=ipImageResultDispl, hrPrev:=hr);
+			// Debug ** copy need time & memory & just 1 side can access the image | transform: save time
+			//hr := F_VN_CopyIntoDisplayableImage(ipSrcImage:= ipImageResult, ipDestImage:= ipImageResultDispl, hrPrev:= hr);
+			hr := F_VN_TransformIntoDisplayableImageExp(ipSrcImage:= ipImageResult, ipDestImage:= ipImageResultDispl, bAllowDeepCopy:= TRUE, hrPrev:= hr);
+									
 		END_IF
 		
 
@@ -149,20 +186,9 @@ CASE eState OF
 END_CASE]]></ST>
     </Implementation>
     <LineIds Name="VISION">
-      <LineId Id="257" Count="0" />
-      <LineId Id="256" Count="0" />
-      <LineId Id="167" Count="0" />
-      <LineId Id="169" Count="0" />
-      <LineId Id="171" Count="1" />
-      <LineId Id="170" Count="0" />
-      <LineId Id="273" Count="9" />
-      <LineId Id="168" Count="0" />
-      <LineId Id="47" Count="13" />
-      <LineId Id="285" Count="0" />
-      <LineId Id="284" Count="0" />
-      <LineId Id="62" Count="3" />
-      <LineId Id="214" Count="0" />
-      <LineId Id="66" Count="58" />
+      <LineId Id="524" Count="23" />
+      <LineId Id="693" Count="115" />
+      <LineId Id="608" Count="4" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>

@@ -13,12 +13,13 @@ VAR
 	fbRTrigHalt: R_TRIG;
 	nAutoState: INT;
 	nSpeed: INT := 400; //degrees/sec
-	bButtonFwVirtual: BOOL;
-	bButtonHaltVirtual: BOOL;
+	bButtonFwVirtual: BOOL:=FALSE;
+	bButtonHaltVirtual: BOOL:=FALSE;
+	bEnableServo: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbEnableAxes.bEnableAxes := TRUE;
+      <ST><![CDATA[fbEnableAxes.bEnableAxes := bEnableServo;
 fbRTrigMoveFW(CLK:=GVL.bButtonFw OR bButtonFwVirtual, Q=>);
 fbRTrigMoveBW(CLK:=GVL.bButtonBw, Q=>);
 fbRTrigHalt(CLK:=GVL.bButtonHalt OR bButtonHaltVirtual, Q=>);

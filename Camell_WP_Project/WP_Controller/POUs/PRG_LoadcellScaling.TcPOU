@@ -6,6 +6,10 @@ VAR
 	bActivateLoadcellScaling AT %I*: BOOL;
 	bDeactivateLoadcellScaling AT %I*:BOOL;
 	bActiveState: BOOL;
+	bZeroing: BOOL;
+	bSet300Gr: BOOL;
+	nMinValue: DINT:=430;
+	nMaxValue: DINT:=1100;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -14,13 +18,17 @@ IF 	bActivateLoadcellScaling AND NOT bDeactivateLoadcellScaling THEN
 	bActiveState:=TRUE;
 ELSIF 	bDeactivateLoadcellScaling AND NOT bActivateLoadcellScaling THEN
 	bActiveState:=FALSE;
-ELSE
-	bActiveState:=FALSE;
 END_IF
 
 // Funtion execute
 IF bActiveState THEN
-	GVL.uLoadCellScaledValue := F_Scale(GVL.uLoadCellRawValue, 0.0, 1.0, -383, 1200);
+	IF bZeroing THEN
+		nMinValue:= GVL.uLoadCellRawValue;
+	END_IF
+	IF bSet300Gr THEN
+		nMaxValue:= GVL.uLoadCellRawValue;
+	END_IF
+	GVL.uLoadCellScaledValue := F_Scale(GVL.uLoadCellRawValue, 0.0, 0.3, nMinValue, nMaxValue);
 ELSE
 	GVL.uLoadCellScaledValue:= 0.0;
 END_IF
@@ -29,12 +37,14 @@ END_IF
     <LineIds Name="PRG_LoadcellScaling">
       <LineId Id="14" Count="2" />
       <LineId Id="19" Count="1" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="29" Count="0" />
       <LineId Id="13" Count="0" />
       <LineId Id="22" Count="0" />
       <LineId Id="21" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="41" Count="2" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="49" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="27" Count="1" />
       <LineId Id="25" Count="1" />

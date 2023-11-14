@@ -155,6 +155,8 @@
 </div>
 <div id="DriveAutoToggleButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="57" data-tchmi-left-unit="%" data-tchmi-text="Auto" data-tchmi-top="45.5" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.GVL.bButtonAuto%/s%">
 </div>
+<div id="EnableAxesButton" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiToggleButton" data-tchmi-height="8" data-tchmi-height-unit="%" data-tchmi-left="16.0" data-tchmi-left-unit="%" data-tchmi-text="Enable" data-tchmi-top="59" data-tchmi-top-unit="%" data-tchmi-width="25" data-tchmi-width-unit="%" data-tchmi-word-wrap="true" data-tchmi-text-horizontal-alignment="Center" data-tchmi-text-vertical-alignment="Center" data-tchmi-text-font-size-unit="%" data-tchmi-text-font-size="150" data-tchmi-state-symbol="%s%PLC1.PRG_MotorDrive.bEnableServo%/s%">
+</div>
 </div>
 <div id="TcHmiContainer_29" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height="70" data-tchmi-height-unit="%" data-tchmi-left="1.3" data-tchmi-left-unit="%" data-tchmi-top="18.9" data-tchmi-top-unit="%" data-tchmi-width="60" data-tchmi-width-unit="%">
 <div id="TcHmi_Controls_Beckhoff_TcHmiImage_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="95" data-tchmi-height-unit="%" data-tchmi-left="4.3" data-tchmi-left-unit="%" data-tchmi-src="Images/motorDrive-removebg-preview.png" data-tchmi-top="3.4" data-tchmi-top-unit="%" data-tchmi-width="90" data-tchmi-width-unit="%">
